@@ -42,7 +42,7 @@ export default function Navbar() {
             whileHover={{ scale: 1.05 }}
           >
             <a href="#hero" className="font-orbitron text-xl font-bold text-cyber-blue">
-              NK<span className="text-cyber-purple">.IO</span>
+              Nand Kishor
             </a>
           </motion.div>
 

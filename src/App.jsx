@@ -31,7 +31,7 @@ function LoadingScreen({ onComplete }) {
           transition={{ duration: 0.5 }}
           className="font-orbitron text-4xl font-bold text-cyber-blue mb-8"
         >
-          NK<span className="text-cyber-purple">.IO</span>
+          Nand<span className="text-cyber-purple"> Kishor</span>
         </motion.div>
         
         {/* Loading animation */}

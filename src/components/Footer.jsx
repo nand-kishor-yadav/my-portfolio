@@ -30,7 +30,7 @@ export default function Footer() {
             className="md:col-span-1"
           >
             <h3 className="font-orbitron text-xl font-bold text-cyber-blue mb-4">
-              NK<span className="text-cyber-purple">.IO</span>
+              Nand Kishor
             </h3>
             <p className="text-gray-400 text-sm mb-4">
               Full Stack Developer & Electronics Engineer building intelligent systems.
