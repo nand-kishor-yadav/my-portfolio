@@ -10,14 +10,33 @@ export default function Contact() {
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    setIsSubmitting(false);
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setSubmitStatus(null);
+    try {
+      const response = await fetch('https://mechnetautomator.com/api/send-mail.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Request failed with status ${response.status}`);
+      }
+
+      setFormData({ name: '', email: '', subject: '', message: '' });
+      setSubmitStatus({ type: 'success', message: 'Message sent successfully.' });
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Failed to send message. Please try again later.',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -212,6 +231,16 @@ export default function Contact() {
                   </>
                 )}
               </motion.button>
+
+              {submitStatus && (
+                <p
+                  className={`text-sm ${
+                    submitStatus.type === 'success' ? 'text-cyber-cyan' : 'text-red-400'
+                  }`}
+                >
+                  {submitStatus.message}
+                </p>
+              )}
             </form>
           </motion.div>
         </div>
