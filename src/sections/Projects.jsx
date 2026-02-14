@@ -7,6 +7,8 @@ const projects = [
     title: 'EMG Controlled Robotic Arm',
     category: 'Robotics',
     icon: FiCpu,
+    status: 'Done & Tested',
+    statusType: 'done',
     techStack: ['Python', 'Embedded C', 'Arduino', 'EMG Sensors'],
     description: 'A robotic arm controlled by EMG (Electromyography) signals from muscle movements. Allows users to control the arm using muscle signals.',
     features: [
@@ -20,6 +22,8 @@ const projects = [
     title: 'Chatbot (SAM)',
     category: 'AI/ML',
     icon: FiCode,
+    status: 'Under Improvements',
+    statusType: 'improving',
     techStack: ['Python', 'NLP', 'TensorFlow', 'React.js'],
     description: 'A personal assistant chatbot built on my own trained model that handles real-time searches and social media tasks.',
     features: [
@@ -33,6 +37,8 @@ const projects = [
     title: 'Android Automator',
     category: 'Automation',
     icon: FiCode,
+    status: 'Improving (new features)',
+    statusType: 'improving',
     techStack: ['Java', 'Appium', 'Python', 'Android SDK'],
     description: 'Production-ready Instagram automation software for agencies managing multiple accounts and growth at scale.',
     features: [
@@ -50,9 +56,214 @@ const projects = [
     ],
   },
   {
+    title: 'Smart Solar Monitoring & Environmental Analytics System',
+    category: 'IoT / Embedded Systems',
+    icon: FiCpu,
+    status: 'Done & Tested',
+    statusType: 'done',
+    techStack: [
+      'ESP32',
+      'ATmega',
+      'Embedded C',
+      'GSM Module',
+      'REST API',
+      'Web Dashboard',
+      'Cloud Logging',
+    ],
+    description:
+      'A real-time solar monitoring system that measures environmental and electrical parameters including dust levels, temperature, humidity, air density, solar irradiance, wind speed/direction, solar voltage/current/power, and inverter metrics. Data is displayed on LCD, transmitted via GSM, and synchronized to a custom-built analytics dashboard.',
+    features: [
+      'Live LCD data display',
+      'GSM-based daily SMS reporting',
+      'Custom web dashboard with CSV export',
+      'Cloud logging with historical analytics',
+      'Solar vs inverter efficiency calculation',
+      'Low efficiency and high dust alert system',
+    ],
+  },
+  {
+    title: 'MechTODO - Smart Task & Productivity Manager',
+    category: 'Android Application',
+    icon: FiCode,
+    status: 'Done & Tested',
+    statusType: 'done',
+    techStack: [
+      'Java / Kotlin',
+      'Android SDK',
+      'Room Database',
+      'Notification Manager',
+      'Material UI',
+    ],
+    description:
+      'A feature-rich Android task management application that allows users to organize tasks into Daily, Projects, In Progress, Completed, Planned, On Hold, and Overdue categories with customizable reminders and task history management.',
+    features: [
+      'Category-based task organization',
+      'Custom notification scheduling',
+      'Task history tracking',
+      'Progress status management',
+      'Overdue detection system',
+    ],
+  },
+  {
+    title: 'Instagram Growth Analytics & Monitoring Dashboard',
+    category: 'Web Application / Analytics',
+    icon: FiCode,
+    status: 'Improving (new features)',
+    statusType: 'improving',
+    techStack: [
+      'PHP',
+      'Automation Scripts',
+      'REST API',
+      'React.js',
+      'Chart.js',
+      'Database',
+    ],
+    description:
+      'A web-based analytics dashboard that allows users to monitor Instagram profile metrics, track growth trends, and analyze engagement performance in real-time.',
+    features: [
+      'Follower growth visualization',
+      'Engagement rate calculation',
+      'Drop alert notifications',
+      'PDF report export',
+      'Competitor comparison analysis',
+    ],
+  },
+  {
+    title: 'Google Maps Business Data Extraction Tool',
+    category: 'Automation / Web Scraping',
+    icon: FiCode,
+    status: 'Done & Tested',
+    statusType: 'done',
+    techStack: [
+      'Java',
+      'Selenium',
+      'Multithreading',
+      'Proxy Rotation',
+      'Captcha Handling',
+      'Excel (XLSX Export)',
+    ],
+    description:
+      'An automated crawler that extracts business data from Google Maps based on predefined search queries and generates structured Excel reports separated per query.',
+    features: [
+      'Query-based data extraction',
+      'Email and website extraction',
+      'Multi-thread processing',
+      'Proxy rotation support',
+      'Captcha handling logic',
+      'Automated Excel export',
+    ],
+  },
+  {
+    title: 'Automated Account Registration & Ticket Submission System',
+    category: 'Automation',
+    icon: FiCode,
+    status: 'Improving (new features)',
+    statusType: 'improving',
+    techStack: [
+      'Java',
+      'Selenium',
+      'Multi-threading',
+      'Captcha Handling',
+      'Queue System',
+    ],
+    description:
+      'An automation framework designed to register accounts on targeted platforms and submit structured support tickets using predefined subject and message templates.',
+    features: [
+      'Automated account registration',
+      'Structured ticket submission',
+      'Captcha handling integration',
+      'Retry logic system',
+      'Multi-thread task queue',
+    ],
+  },
+  {
+    title: 'Mech Tracker - Smart Anti-Theft & Device Recovery Platform',
+    category: 'Android + Web Application',
+    status: 'Under Development',
+    statusType: 'development',
+    icon: FiCode,
+    techStack: [
+      'Android SDK',
+      'Java / Kotlin',
+      'REST API',
+      'Web Dashboard',
+      'GPS',
+      'BLE Mesh',
+      'UWB',
+      'Cloud Database',
+    ],
+    description:
+      'A multi-layer anti-theft and recovery system combining Android application and web dashboard. Users can remotely activate Lost Mode to enable stealth security controls and multi-source device tracking.',
+    features: [
+      'Remote Lost Mode activation',
+      'Fake shutdown simulation',
+      'Notification drawer blocking',
+      'Siren alert system',
+      'Live GPS tracking dashboard',
+      'BLE Mesh & UWB fallback tracking',
+      'Remote camera capture',
+      'Device last-seen analytics',
+    ],
+  },
+  {
+    title: 'Automated Android-Based Account Creation System',
+    category: 'Device Automation',
+    icon: FiCode,
+    status: 'Improving (new features)',
+    statusType: 'improving',
+    techStack: [
+      'Java',
+      'Windows Application',
+      'ADB',
+      'Android Automation',
+      'Custom OS (GrapheneOS / LineageOS)',
+      'IP Rotation',
+      'Device Spoofing',
+    ],
+    description:
+      'A Windows-based automation system that connects to real Android devices running custom operating systems to automate account creation workflows with IP rotation and device-level execution.',
+    features: [
+      'Real-device automation',
+      'Dynamic IP rotation',
+      'Device fingerprint spoofing',
+      'Automated profile setup',
+      'Failure reason analyzer',
+      'Detailed activity logging',
+    ],
+  },
+  {
+    title: 'Automated Social Media Account Provisioning System',
+    category: 'Automation / Mobile Automation',
+    icon: FiCode,
+    status: 'Improving (new features)',
+    statusType: 'improving',
+    techStack: [
+      'Java',
+      'Windows Application',
+      'ADB',
+      'Android Automation',
+      'Custom OS (GrapheneOS / LineageOS)',
+      'IP Rotation',
+      'Device Spoofing',
+    ],
+    description:
+      'A device-based automation solution designed to provision social media accounts using real Android hardware environments with controlled IP rotation and workflow automation.',
+    features: [
+      'Bulk account provisioning',
+      'IP rotation management',
+      'Device spoofing control',
+      'Automated profile configuration',
+      'Failure analysis system',
+      'Activity logging',
+      '2FA enabling automation',
+    ],
+  },
+  {
     title: '3D Printer',
     category: 'Electronics',
     icon: FiCpu,
+    status: 'Done & Tested',
+    statusType: 'done',
     techStack: ['Arduino', 'C++', '3D Printing', 'PCB Design'],
     description: 'Custom-built 3D printer with enhanced features and precision control.',
     features: [
@@ -66,6 +277,8 @@ const projects = [
     title: 'Battery Management System',
     category: 'Electronics',
     icon: FiCpu,
+    status: 'Done & Tested',
+    statusType: 'done',
     techStack: ['Embedded C', 'PCB Design', 'IoT', 'Altium'],
     description: 'Smart BMS for lithium-ion batteries with monitoring and protection features.',
     features: [
@@ -79,6 +292,8 @@ const projects = [
     title: 'Bio Amplifier',
     category: 'Medical',
     icon: FiCpu,
+    status: 'Done & Tested',
+    statusType: 'done',
     techStack: ['Analog Electronics', 'PCB Design', 'Signal Processing'],
     description: 'Bio-amplifier for capturing and amplifying biological signals like ECG, EEG, and EMG.',
     features: [
@@ -92,6 +307,8 @@ const projects = [
     title: 'Arduino Shield & RAMPS 1.4',
     category: 'Electronics',
     icon: FiCpu,
+    status: 'Done & Tested',
+    statusType: 'done',
     techStack: ['Arduino', 'PCB Design', 'C++', '3D Printing'],
     description: 'Custom Arduino shield and RAMPS 1.4 controller for 3D printer and CNC applications.',
     features: [
@@ -103,9 +320,15 @@ const projects = [
   },
 ];
 
+const statusStyles = {
+  done: 'border-emerald-400/40 bg-emerald-400/10 text-emerald-300',
+  improving: 'border-amber-400/40 bg-amber-400/10 text-amber-300',
+  development: 'border-cyber-blue/40 bg-cyber-blue/10 text-cyber-blue',
+};
+
 const ProjectCard = ({ project, onClick }) => (
   <motion.div
-    whileHover={{ 
+    whileHover={{
       scale: 1.02,
       rotateY: 5,
       rotateX: 5,
@@ -117,7 +340,7 @@ const ProjectCard = ({ project, onClick }) => (
   >
     {/* Card Glow */}
     <div className="absolute inset-0 bg-gradient-to-r from-cyber-blue/10 to-cyber-purple/10 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl" />
-    
+
     {/* Icon */}
     <div className="w-14 h-14 bg-gradient-to-br from-cyber-blue/20 to-cyber-purple/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
       <project.icon className="w-7 h-7 text-cyber-blue" />
@@ -133,6 +356,14 @@ const ProjectCard = ({ project, onClick }) => (
       {project.title}
     </h3>
 
+    {project.status && (
+      <span
+        className={`ml-2 inline-flex items-center rounded-full border px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${statusStyles[project.statusType] || statusStyles.development
+          }`}
+      >
+        {project.status}
+      </span>
+    )}
     {/* Tech Stack */}
     <div className="flex flex-wrap gap-2 mt-4">
       {project.techStack.slice(0, 3).map((tech) => (
@@ -195,6 +426,16 @@ const ProjectModal = ({ project, onClose }) => {
 
         {/* Description */}
         <p className="text-gray-300 mb-6">{project.description}</p>
+        {project.status && (
+          <div className="mb-6">
+            <span
+              className={`inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-wider ${statusStyles[project.statusType] || statusStyles.development
+                }`}
+            >
+              {project.status}
+            </span>
+          </div>
+        )}
 
         {/* Tech Stack */}
         <div className="mb-6">
@@ -243,7 +484,7 @@ export default function Projects() {
   return (
     <section id="projects" className="relative py-20 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-cyber-dark to-cyber-black" />
-      
+
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
