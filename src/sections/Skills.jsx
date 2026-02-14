@@ -69,7 +69,7 @@ export default function Skills() {
   return (
     <section id="skills" className="relative py-20 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-cyber-black to-cyber-dark" />
-      
+
       {/* Animated background elements */}
       <div className="absolute top-1/4 right-0 w-64 h-64 bg-cyber-purple/10 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-cyber-cyan/10 rounded-full blur-3xl" />
@@ -116,9 +116,12 @@ export default function Skills() {
           </h3>
           <div className="flex flex-wrap justify-center gap-4">
             {[
-              'Git', 'Docker', 'AWS', 'MongoDB', 'PostgreSQL', 
+              'Git', 'Docker', 'AWS', 'MongoDB', 'MySQL', 'PostgreSQL',
               'REST APIs', 'Microservices', 'Agile', 'CI/CD',
-              'Arduino', 'Raspberry Pi', 'MATLAB', 'Simulink'
+              'Android SDK', 'Selenium', 'ADB', 'TensorFlow',
+              'Chart.js', 'ESP32', 'GSM', 'BLE Mesh',
+              'UWB', 'GPS', 'Arduino', 'Raspberry Pi',
+              'MATLAB', 'Simulink'
             ].map((tech, index) => (
               <motion.div
                 key={tech}

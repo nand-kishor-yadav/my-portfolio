@@ -25,8 +25,10 @@ const highlights = [
 ];
 
 const skills = [
-  'Python', 'JavaScript', 'React.js', 'Node.js', 'C/C++', 'Java',
-  'PCB Design', 'Embedded Systems', 'PLC', 'IoT', 'Robotics'
+  'Python', 'Java', 'Kotlin', 'HTML', 'CSS', 'JavaScript', 'PHP', 'SQL', 'React.js', 'Node.js',
+  'Android SDK', 'Windows Apps', 'Selenium', 'Appium', 'ADB',
+  'C/C++', 'ESP32', 'GSM', 'PCB Design', 'Embedded Systems',
+  'IoT', 'Robotics'
 ];
 
 export default function About() {
@@ -48,8 +50,8 @@ export default function About() {
         >
           <h2 className="section-title">About Me</h2>
           <p className="text-gray-400 max-w-3xl mx-auto text-lg">
-            I am a multidisciplinary engineer blending software development and electronics innovation. 
-            With expertise in full stack development, embedded systems, robotics, and automation, 
+            I am a multidisciplinary engineer blending software development and electronics innovation.
+            With expertise in full stack development, embedded systems, robotics, and automation,
             I build intelligent systems that merge hardware and software.
           </p>
         </motion.div>
