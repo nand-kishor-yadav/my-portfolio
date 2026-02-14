@@ -5,7 +5,7 @@ const experiences = [
   {
     title: 'Developer',
     company: 'Necro Automations',
-    period: '2024–Present',
+    period: '2024-Present',
     type: 'promotion',
     achievements: [
       'Improved software stability by 40%',
@@ -17,7 +17,7 @@ const experiences = [
   {
     title: 'Technical Support Engineer',
     company: 'Necro Automations',
-    period: '2023',
+    period: '2023-2024',
     type: 'previous',
     achievements: [
       'Technical assistance & debugging',
@@ -27,12 +27,25 @@ const experiences = [
   {
     title: 'Research Analyst',
     company: 'MarkScan',
-    period: '2022–2023',
+    period: 'Jan-2023 - Mar-2023',
     type: 'previous',
     achievements: [
       'Data analysis',
       'Legal collaboration',
       'Copyright investigation',
+    ],
+  },
+  {
+    title: 'Electronics & PCB Design Trainer',
+    company: 'APSD Innovation Infotech (Training Center)',
+    period: '',
+    type: 'previous',
+    achievements: [
+      'Taught electronics fundamentals and PCB design workflows to students',
+      'Platforms: Altium Designer, Proteus, EasyEDA',
+      'Guided schematic capture, component selection, and PCB layout practices',
+      'Delivered hands-on lab sessions and troubleshooting support',
+      'Recognized with Best Star Performance Award for training impact',
     ],
   },
 ];
@@ -107,10 +120,12 @@ export default function Experience() {
                         <span>{exp.company}</span>
                       </div>
                     </div>
-                    <div className="flex items-center gap-1 text-gray-400 text-sm">
-                      <FiCalendar />
-                      <span>{exp.period}</span>
-                    </div>
+                    {exp.period && (
+                      <div className="flex items-center gap-1 text-gray-400 text-sm">
+                        <FiCalendar />
+                        <span>{exp.period}</span>
+                      </div>
+                    )}
                   </div>
 
                   {/* Achievements */}
