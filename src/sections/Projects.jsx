@@ -6,6 +6,7 @@ const projects = [
   {
     title: 'EMG Controlled Robotic Arm',
     category: 'Robotics',
+    mainCategory: 'Electronic and Embedded System',
     icon: FiCpu,
     status: 'Done & Tested',
     statusType: 'done',
@@ -21,6 +22,7 @@ const projects = [
   {
     title: 'Chatbot (SAM)',
     category: 'AI/ML',
+    mainCategory: 'Software Development',
     icon: FiCode,
     status: 'Under Improvements',
     statusType: 'improving',
@@ -36,6 +38,7 @@ const projects = [
   {
     title: 'Android Automator',
     category: 'Automation',
+    mainCategory: 'Software Development',
     icon: FiCode,
     status: 'Improving (new features)',
     statusType: 'improving',
@@ -58,6 +61,7 @@ const projects = [
   {
     title: 'Smart Solar Monitoring & Environmental Analytics System',
     category: 'IoT / Embedded Systems',
+    mainCategory: 'Electronic and Embedded System',
     icon: FiCpu,
     status: 'Done & Tested',
     statusType: 'done',
@@ -84,6 +88,7 @@ const projects = [
   {
     title: 'MechTODO - Smart Task & Productivity Manager',
     category: 'Android Application',
+    mainCategory: 'Software Development',
     icon: FiCode,
     status: 'Done & Tested',
     statusType: 'done',
@@ -107,6 +112,7 @@ const projects = [
   {
     title: 'Instagram Growth Analytics & Monitoring Dashboard',
     category: 'Web Application / Analytics',
+    mainCategory: 'Software Development',
     icon: FiCode,
     status: 'Improving (new features)',
     statusType: 'improving',
@@ -131,6 +137,7 @@ const projects = [
   {
     title: 'Google Maps Business Data Extraction Tool',
     category: 'Automation / Web Scraping',
+    mainCategory: 'Software Development',
     icon: FiCode,
     status: 'Done & Tested',
     statusType: 'done',
@@ -156,6 +163,7 @@ const projects = [
   {
     title: 'Automated Account Registration & Ticket Submission System',
     category: 'Automation',
+    mainCategory: 'Software Development',
     icon: FiCode,
     status: 'Improving (new features)',
     statusType: 'improving',
@@ -179,6 +187,7 @@ const projects = [
   {
     title: 'Mech Tracker - Smart Anti-Theft & Device Recovery Platform',
     category: 'Android + Web Application',
+    mainCategory: 'Software Development',
     status: 'Under Development',
     statusType: 'development',
     icon: FiCode,
@@ -208,6 +217,7 @@ const projects = [
   {
     title: 'Automated Android-Based Account Creation System',
     category: 'Device Automation',
+    mainCategory: 'Software Development',
     icon: FiCode,
     status: 'Improving (new features)',
     statusType: 'improving',
@@ -234,6 +244,7 @@ const projects = [
   {
     title: 'Automated Social Media Account Provisioning System',
     category: 'Automation / Mobile Automation',
+    mainCategory: 'Software Development',
     icon: FiCode,
     status: 'Improving (new features)',
     statusType: 'improving',
@@ -261,6 +272,7 @@ const projects = [
   {
     title: '3D Printer',
     category: 'Electronics',
+    mainCategory: 'Electronic and Embedded System',
     icon: FiCpu,
     status: 'Done & Tested',
     statusType: 'done',
@@ -276,6 +288,7 @@ const projects = [
   {
     title: 'Battery Management System',
     category: 'Electronics',
+    mainCategory: 'Electronic and Embedded System',
     icon: FiCpu,
     status: 'Done & Tested',
     statusType: 'done',
@@ -291,6 +304,7 @@ const projects = [
   {
     title: 'Bio Amplifier',
     category: 'Medical',
+    mainCategory: 'Electronic and Embedded System',
     icon: FiCpu,
     status: 'Done & Tested',
     statusType: 'done',
@@ -306,6 +320,7 @@ const projects = [
   {
     title: 'Arduino Shield & RAMPS 1.4',
     category: 'Electronics',
+    mainCategory: 'Electronic and Embedded System',
     icon: FiCpu,
     status: 'Done & Tested',
     statusType: 'done',
@@ -316,6 +331,35 @@ const projects = [
       'Extended compatibility',
       'Robust power management',
       'Easy troubleshooting',
+    ],
+  },
+  {
+    title: 'Custom High-Torque Smart Servo Motor (30kg-cm @ 12V)',
+    category: 'Embedded Systems / Power Electronics / Mechanical Design',
+    mainCategory: 'Electronic and Embedded System',
+    icon: FiCpu,
+    status: 'Done & Tested',
+    statusType: 'done',
+    techStack: [
+      'Embedded C',
+      'Custom H-Bridge Design',
+      'MOSFET Power Stage',
+      'PWM Signal Processing',
+      'Metal Gearbox Engineering',
+      'PCB Design',
+      'Control Systems'
+    ],
+    description:
+      'A fully custom-engineered high-torque servo motor designed as a cost-efficient alternative to commercial servo systems. The motor maintains standard 3-pin servo compatibility (VCC, GND, Signal) while delivering 30kg-cm torque at 12V with a maximum current of 1A. Built with a custom high-current MOSFET-based H-bridge and precision metal gearbox, the system achieves approximately 3× higher torque output at nearly 50% lower cost compared to similar market alternatives.',
+    features: [
+      '30kg-cm torque output',
+      '12V operating voltage',
+      'Maximum 1A current draw',
+      'Standard 3-pin servo interface (drop-in compatible)',
+      'Custom high-current MOSFET H-bridge driver',
+      'Precision metal gearbox for durability',
+      '3× torque improvement over comparable market units',
+      'Cost-optimized hardware architecture'
     ],
   },
 ];
@@ -480,6 +524,13 @@ const ProjectModal = ({ project, onClose }) => {
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [activeCategory, setActiveCategory] = useState('All');
+
+  const categories = ['All', 'Software Development', 'Electronic and Embedded System'];
+
+  const filteredProjects = activeCategory === 'All' 
+    ? projects 
+    : projects.filter(project => project.mainCategory === activeCategory);
 
   return (
     <section id="projects" className="relative py-20 overflow-hidden">
@@ -499,9 +550,31 @@ export default function Projects() {
           </p>
         </motion.div>
 
+        {/* Category Filter Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex flex-wrap justify-center gap-3 mb-12"
+        >
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={`px-5 py-2.5 rounded-lg font-medium transition-all duration-300 ${
+                activeCategory === category
+                  ? 'bg-cyber-blue text-cyber-dark glow-button'
+                  : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/10'
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </motion.div>
+
         {/* Project Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
+          {filteredProjects.map((project, index) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 30 }}
