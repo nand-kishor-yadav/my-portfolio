@@ -108,7 +108,7 @@ export default function Achievements() {
         >
           <h2 className="section-title">Achievements</h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Recognitions and accomplishments that highlight my journey of excellence.
+            Recognitions with identifiable organizations that support the portfolio narrative.
           </p>
         </motion.div>
 
@@ -122,35 +122,6 @@ export default function Achievements() {
             />
           ))}
         </div>
-
-        {/* Stats / Additional achievements */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6"
-        >
-          {[
-            { value: '3+', label: 'Years Experience' },
-            { value: '250+', label: 'Projects Completed' },
-            { value: '10+', label: 'Happy Clients' },
-            { value: '99%', label: 'Success Rate' },
-          ].map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="text-center"
-            >
-              <div className="text-4xl font-orbitron font-bold text-cyber-blue mb-2">
-                {stat.value}
-              </div>
-              <div className="text-gray-400 text-sm">{stat.label}</div>
-            </motion.div>
-          ))}
-        </motion.div>
       </div>
     </section>
   );

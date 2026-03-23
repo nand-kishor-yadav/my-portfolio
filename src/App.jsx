@@ -112,15 +112,13 @@ function ScrollToTop() {
 }
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // Check if user prefers reduced motion
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) {
-      setIsLoading(false);
+  const [isLoading, setIsLoading] = useState(() => {
+    if (typeof window === 'undefined') {
+      return true;
     }
-  }, []);
+
+    return !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  });
 
   return (
     <div className="min-h-screen bg-cyber-black text-white">

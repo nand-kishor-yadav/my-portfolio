@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FiGithub, FiLinkedin, FiTwitter, FiMail, FiHeart } from 'react-icons/fi';
+import { FiGithub, FiHeart, FiLinkedin, FiMail, FiTwitter } from 'react-icons/fi';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -22,7 +22,6 @@ export default function Footer() {
     <footer className="relative bg-cyber-black border-t border-cyber-blue/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Brand */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -33,7 +32,7 @@ export default function Footer() {
               Nand Kishor
             </h3>
             <p className="text-gray-400 text-sm mb-4">
-              Full Stack Developer & Electronics Engineer building intelligent systems.
+              Embedded and IoT engineer building proof-driven hardware-software systems.
             </p>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
@@ -52,7 +51,6 @@ export default function Footer() {
             </div>
           </motion.div>
 
-          {/* Quick Links */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -74,25 +72,23 @@ export default function Footer() {
             </ul>
           </motion.div>
 
-          {/* Services */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <h4 className="font-semibold text-white mb-4">Services</h4>
+            <h4 className="font-semibold text-white mb-4">Focus Areas</h4>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li>Web Development</li>
-              <li>Android Applications</li>
-              <li>Windows Applications</li>
               <li>Embedded Systems</li>
-              <li>Robotics</li>
-              <li>IoT Solutions</li>
+              <li>IoT Monitoring Platforms</li>
+              <li>PCB Design</li>
+              <li>Robotics & Motion Systems</li>
+              <li>Automation Workflows</li>
+              <li>Supporting Dashboards</li>
             </ul>
           </motion.div>
 
-          {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -108,7 +104,6 @@ export default function Footer() {
           </motion.div>
         </div>
 
-        {/* Bottom bar */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

@@ -3,25 +3,14 @@ import { FiBriefcase, FiCalendar, FiArrowUp } from 'react-icons/fi';
 
 const experiences = [
   {
-    title: 'Developer',
-    company: 'Necro Automations',
-    period: '2024-Present',
-    type: 'promotion',
-    achievements: [
-      'Improved software stability by 40%',
-      'Reduced resolution time by 30%',
-      'Backend development & automation systems',
-      'Cross-team collaboration',
-    ],
-  },
-  {
     title: 'Technical Support Engineer',
     company: 'Necro Automations',
-    period: '2023-2024',
+    period: 'Mar-2023 - Present',
     type: 'previous',
     achievements: [
       'Technical assistance & debugging',
       'Client support & training',
+      'Reduced resolution time by 30%',
     ],
   },
   {

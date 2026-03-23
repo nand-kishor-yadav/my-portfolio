@@ -1,489 +1,318 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiGithub, FiExternalLink, FiX, FiCode, FiCpu } from 'react-icons/fi';
+import {
+  FiChevronDown,
+  FiChevronUp,
+  FiCheckCircle,
+  FiClipboard,
+  FiCode,
+  FiCpu,
+  FiExternalLink,
+  FiFileText,
+  FiFilm,
+  FiImage,
+  FiLayers,
+  FiTool,
+  FiTrendingUp,
+  FiUser,
+  FiX,
+} from 'react-icons/fi';
+import { projects } from '../data/projects';
 
-const projects = [
-  {
-    title: 'EMG Controlled Robotic Arm',
-    category: 'Robotics',
-    mainCategory: 'Electronic and Embedded System',
-    icon: FiCpu,
-    status: 'Done & Tested',
-    statusType: 'done',
-    techStack: ['Python', 'Embedded C', 'Arduino', 'EMG Sensors'],
-    description: 'A robotic arm controlled by EMG (Electromyography) signals from muscle movements. Allows users to control the arm using muscle signals.',
-    features: [
-      'Real-time EMG signal processing',
-      'Precise motor control',
-      'Adjustable sensitivity settings',
-      'Wireless connectivity option',
-    ],
-  },
-  {
-    title: 'Chatbot (SAM)',
-    category: 'AI/ML',
-    mainCategory: 'Software Development',
-    icon: FiCode,
-    status: 'Under Improvements',
-    statusType: 'improving',
-    techStack: ['Python', 'NLP', 'TensorFlow', 'React.js'],
-    description: 'A personal assistant chatbot built on my own trained model that handles real-time searches and social media tasks.',
-    features: [
-      'Own trained model for personalized assistance',
-      'Real-time search assistance',
-      'Social media handling workflows',
-      'Context-aware responses',
-    ],
-  },
-  {
-    title: 'Android Automator',
-    category: 'Automation',
-    mainCategory: 'Software Development',
-    icon: FiCode,
-    status: 'Improving (new features)',
-    statusType: 'improving',
-    techStack: ['Java', 'Appium', 'Python', 'Android SDK'],
-    description: 'Production-ready Instagram automation software for agencies managing multiple accounts and growth at scale.',
-    features: [
-      'Automated likes',
-      'Smart follow/unfollow',
-      'Custom commenting',
-      'Story viewer',
-      'Post scheduling',
-      'Target filtering',
-      'Welcome and outbound DMs',
-      'Instagram account creator',
-      'Gmail account creator',
-      'Advanced human emulation',
-      'Account editing',
-    ],
-  },
-  {
-    title: 'Smart Solar Monitoring & Environmental Analytics System',
-    category: 'IoT / Embedded Systems',
-    mainCategory: 'Electronic and Embedded System',
-    icon: FiCpu,
-    status: 'Done & Tested',
-    statusType: 'done',
-    techStack: [
-      'ESP32',
-      'ATmega',
-      'Embedded C',
-      'GSM Module',
-      'REST API',
-      'Web Dashboard',
-      'Cloud Logging',
-    ],
-    description:
-      'A real-time solar monitoring system that measures environmental and electrical parameters including dust levels, temperature, humidity, air density, solar irradiance, wind speed/direction, solar voltage/current/power, and inverter metrics. Data is displayed on LCD, transmitted via GSM, and synchronized to a custom-built analytics dashboard.',
-    features: [
-      'Live LCD data display',
-      'GSM-based daily SMS reporting',
-      'Custom web dashboard with CSV export',
-      'Cloud logging with historical analytics',
-      'Solar vs inverter efficiency calculation',
-      'Low efficiency and high dust alert system',
-    ],
-  },
-  {
-    title: 'MechTODO - Smart Task & Productivity Manager',
-    category: 'Android Application',
-    mainCategory: 'Software Development',
-    icon: FiCode,
-    status: 'Done & Tested',
-    statusType: 'done',
-    techStack: [
-      'Java / Kotlin',
-      'Android SDK',
-      'Room Database',
-      'Notification Manager',
-      'Material UI',
-    ],
-    description:
-      'A feature-rich Android task management application that allows users to organize tasks into Daily, Projects, In Progress, Completed, Planned, On Hold, and Overdue categories with customizable reminders and task history management.',
-    features: [
-      'Category-based task organization',
-      'Custom notification scheduling',
-      'Task history tracking',
-      'Progress status management',
-      'Overdue detection system',
-    ],
-  },
-  {
-    title: 'Instagram Growth Analytics & Monitoring Dashboard',
-    category: 'Web Application / Analytics',
-    mainCategory: 'Software Development',
-    icon: FiCode,
-    status: 'Improving (new features)',
-    statusType: 'improving',
-    techStack: [
-      'PHP',
-      'Automation Scripts',
-      'REST API',
-      'React.js',
-      'Chart.js',
-      'Database',
-    ],
-    description:
-      'A web-based analytics dashboard that allows users to monitor Instagram profile metrics, track growth trends, and analyze engagement performance in real-time.',
-    features: [
-      'Follower growth visualization',
-      'Engagement rate calculation',
-      'Drop alert notifications',
-      'PDF report export',
-      'Competitor comparison analysis',
-    ],
-  },
-  {
-    title: 'Google Maps Business Data Extraction Tool',
-    category: 'Automation / Web Scraping',
-    mainCategory: 'Software Development',
-    icon: FiCode,
-    status: 'Done & Tested',
-    statusType: 'done',
-    techStack: [
-      'Java',
-      'Selenium',
-      'Multithreading',
-      'Proxy Rotation',
-      'Captcha Handling',
-      'Excel (XLSX Export)',
-    ],
-    description:
-      'An automated crawler that extracts business data from Google Maps based on predefined search queries and generates structured Excel reports separated per query.',
-    features: [
-      'Query-based data extraction',
-      'Email and website extraction',
-      'Multi-thread processing',
-      'Proxy rotation support',
-      'Captcha handling logic',
-      'Automated Excel export',
-    ],
-  },
-  {
-    title: 'Automated Account Registration & Ticket Submission System',
-    category: 'Automation',
-    mainCategory: 'Software Development',
-    icon: FiCode,
-    status: 'Improving (new features)',
-    statusType: 'improving',
-    techStack: [
-      'Java',
-      'Selenium',
-      'Multi-threading',
-      'Captcha Handling',
-      'Queue System',
-    ],
-    description:
-      'An automation framework designed to register accounts on targeted platforms and submit structured support tickets using predefined subject and message templates.',
-    features: [
-      'Automated account registration',
-      'Structured ticket submission',
-      'Captcha handling integration',
-      'Retry logic system',
-      'Multi-thread task queue',
-    ],
-  },
-  {
-    title: 'Mech Tracker - Smart Anti-Theft & Device Recovery Platform',
-    category: 'Android + Web Application',
-    mainCategory: 'Software Development',
-    status: 'Under Development',
-    statusType: 'development',
-    icon: FiCode,
-    techStack: [
-      'Android SDK',
-      'Java / Kotlin',
-      'REST API',
-      'Web Dashboard',
-      'GPS',
-      'BLE Mesh',
-      'UWB',
-      'Cloud Database',
-    ],
-    description:
-      'A multi-layer anti-theft and recovery system combining Android application and web dashboard. Users can remotely activate Lost Mode to enable stealth security controls and multi-source device tracking.',
-    features: [
-      'Remote Lost Mode activation',
-      'Fake shutdown simulation',
-      'Notification drawer blocking',
-      'Siren alert system',
-      'Live GPS tracking dashboard',
-      'BLE Mesh & UWB fallback tracking',
-      'Remote camera capture',
-      'Device last-seen analytics',
-    ],
-  },
-  {
-    title: 'Automated Android-Based Account Creation System',
-    category: 'Device Automation',
-    mainCategory: 'Software Development',
-    icon: FiCode,
-    status: 'Improving (new features)',
-    statusType: 'improving',
-    techStack: [
-      'Java',
-      'Windows Application',
-      'ADB',
-      'Android Automation',
-      'Custom OS (GrapheneOS / LineageOS)',
-      'IP Rotation',
-      'Device Spoofing',
-    ],
-    description:
-      'A Windows-based automation system that connects to real Android devices running custom operating systems to automate account creation workflows with IP rotation and device-level execution.',
-    features: [
-      'Real-device automation',
-      'Dynamic IP rotation',
-      'Device fingerprint spoofing',
-      'Automated profile setup',
-      'Failure reason analyzer',
-      'Detailed activity logging',
-    ],
-  },
-  {
-    title: 'Automated Social Media Account Provisioning System',
-    category: 'Automation / Mobile Automation',
-    mainCategory: 'Software Development',
-    icon: FiCode,
-    status: 'Improving (new features)',
-    statusType: 'improving',
-    techStack: [
-      'Java',
-      'Windows Application',
-      'ADB',
-      'Android Automation',
-      'Custom OS (GrapheneOS / LineageOS)',
-      'IP Rotation',
-      'Device Spoofing',
-    ],
-    description:
-      'A device-based automation solution designed to provision social media accounts using real Android hardware environments with controlled IP rotation and workflow automation.',
-    features: [
-      'Bulk account provisioning',
-      'IP rotation management',
-      'Device spoofing control',
-      'Automated profile configuration',
-      'Failure analysis system',
-      'Activity logging',
-      '2FA enabling automation',
-    ],
-  },
-  {
-    title: '3D Printer',
-    category: 'Electronics',
-    mainCategory: 'Electronic and Embedded System',
-    icon: FiCpu,
-    status: 'Done & Tested',
-    statusType: 'done',
-    techStack: ['Arduino', 'C++', '3D Printing', 'PCB Design'],
-    description: 'Custom-built 3D printer with enhanced features and precision control.',
-    features: [
-      'High precision printing',
-      'Auto-leveling',
-      'WiFi connectivity',
-      'Touchscreen interface',
-    ],
-  },
-  {
-    title: 'Battery Management System',
-    category: 'Electronics',
-    mainCategory: 'Electronic and Embedded System',
-    icon: FiCpu,
-    status: 'Done & Tested',
-    statusType: 'done',
-    techStack: ['Embedded C', 'PCB Design', 'IoT', 'Altium'],
-    description: 'Smart BMS for lithium-ion batteries with monitoring and protection features.',
-    features: [
-      'Cell balancing',
-      'Temperature monitoring',
-      'Overcharge protection',
-      'SOC estimation',
-    ],
-  },
-  {
-    title: 'Bio Amplifier',
-    category: 'Medical',
-    mainCategory: 'Electronic and Embedded System',
-    icon: FiCpu,
-    status: 'Done & Tested',
-    statusType: 'done',
-    techStack: ['Analog Electronics', 'PCB Design', 'Signal Processing'],
-    description: 'Bio-amplifier for capturing and amplifying biological signals like ECG, EEG, and EMG.',
-    features: [
-      'Low noise amplification',
-      'Adjustable gain',
-      'Filter controls',
-      'USB data output',
-    ],
-  },
-  {
-    title: 'Arduino Shield & RAMPS 1.4',
-    category: 'Electronics',
-    mainCategory: 'Electronic and Embedded System',
-    icon: FiCpu,
-    status: 'Done & Tested',
-    statusType: 'done',
-    techStack: ['Arduino', 'PCB Design', 'C++', '3D Printing'],
-    description: 'Custom Arduino shield and RAMPS 1.4 controller for 3D printer and CNC applications.',
-    features: [
-      'Plug-and-play design',
-      'Extended compatibility',
-      'Robust power management',
-      'Easy troubleshooting',
-    ],
-  },
-  {
-    title: 'Custom High-Torque Smart Servo Motor (30kg-cm @ 12V)',
-    category: 'Embedded Systems / Power Electronics / Mechanical Design',
-    mainCategory: 'Electronic and Embedded System',
-    icon: FiCpu,
-    status: 'Done & Tested',
-    statusType: 'done',
-    techStack: [
-      'Embedded C',
-      'Custom H-Bridge Design',
-      'MOSFET Power Stage',
-      'PWM Signal Processing',
-      'Metal Gearbox Engineering',
-      'PCB Design',
-      'Control Systems'
-    ],
-    description:
-      'A fully custom-engineered high-torque servo motor designed as a cost-efficient alternative to commercial servo systems. The motor maintains standard 3-pin servo compatibility (VCC, GND, Signal) while delivering 30kg-cm torque at 12V with a maximum current of 1A. Built with a custom high-current MOSFET-based H-bridge and precision metal gearbox, the system achieves approximately 3× higher torque output at nearly 50% lower cost compared to similar market alternatives.',
-    features: [
-      '30kg-cm torque output',
-      '12V operating voltage',
-      'Maximum 1A current draw',
-      'Standard 3-pin servo interface (drop-in compatible)',
-      'Custom high-current MOSFET H-bridge driver',
-      'Precision metal gearbox for durability',
-      '3× torque improvement over comparable market units',
-      'Cost-optimized hardware architecture'
-    ],
-  },
-];
+const featuredProjectTitles = new Set([
+  'Autonomous Solar Panel Cleaning System with Centralized Master Controller',
+  'Custom High-Torque Smart Servo Motor',
+  'Solar Monitoring & Environmental Analytics System',
+  'Bio-Signal Amplifier',
+]);
 
-const statusStyles = {
-  done: 'border-emerald-400/40 bg-emerald-400/10 text-emerald-300',
-  improving: 'border-amber-400/40 bg-amber-400/10 text-amber-300',
-  development: 'border-cyber-blue/40 bg-cyber-blue/10 text-cyber-blue',
+const featuredProjects = projects.filter((project) => featuredProjectTitles.has(project.title));
+const otherProjects = projects.filter((project) => !featuredProjectTitles.has(project.title));
+
+const categoryIcons = {
+  'IoT / Embedded Systems': FiCpu,
+  'Medical Electronics / Signal Conditioning': FiTool,
+  'Embedded Systems / Power Electronics / Mechanical Design': FiLayers,
 };
 
-const ProjectCard = ({ project, onClick }) => (
-  <motion.div
-    whileHover={{
-      scale: 1.02,
-      rotateY: 5,
-      rotateX: 5,
-    }}
-    transition={{ type: 'spring', stiffness: 300 }}
-    onClick={() => onClick(project)}
-    className="cyber-card cursor-pointer group"
-    style={{ perspective: '1000px' }}
-  >
-    {/* Card Glow */}
-    <div className="absolute inset-0 bg-gradient-to-r from-cyber-blue/10 to-cyber-purple/10 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl" />
+function ProjectCard({ project, onClick }) {
+  const Icon = categoryIcons[project.category] || FiCpu;
+  const showCodeAvailability = project.codeAvailability?.show !== false;
 
-    {/* Icon */}
-    <div className="w-14 h-14 bg-gradient-to-br from-cyber-blue/20 to-cyber-purple/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-      <project.icon className="w-7 h-7 text-cyber-blue" />
-    </div>
+  return (
+    <motion.button
+      type="button"
+      whileHover={{ scale: 1.01, rotateY: 4, rotateX: 4 }}
+      transition={{ type: 'spring', stiffness: 280 }}
+      onClick={() => onClick(project)}
+      className="cyber-card group text-left w-full h-full relative overflow-hidden"
+      style={{ perspective: '1000px' }}
+    >
+      <div className="absolute inset-0 bg-gradient-to-r from-cyber-blue/10 to-cyber-purple/10 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl" />
 
-    {/* Category */}
-    <span className="text-xs font-medium text-cyber-cyan uppercase tracking-wider">
-      {project.category}
-    </span>
+      <div className="relative z-10">
+        <div className="flex items-start justify-between gap-4 mb-5">
+          <div className="w-14 h-14 bg-gradient-to-br from-cyber-blue/20 to-cyber-purple/20 rounded-xl flex items-center justify-center shrink-0">
+            <Icon className="w-7 h-7 text-cyber-blue" />
+          </div>
+          {showCodeAvailability && (
+            <span className="inline-flex items-center rounded-full border border-cyber-blue/40 bg-cyber-blue/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-cyber-cyan">
+              {project.codeAvailability?.label || 'Code Available on Request'}
+            </span>
+          )}
+        </div>
 
-    {/* Title */}
-    <h3 className="text-xl font-semibold text-white mt-2 group-hover:text-cyber-blue transition-colors">
-      {project.title}
-    </h3>
+        <p className="text-xs font-medium text-cyber-cyan uppercase tracking-[0.2em] mb-2">
+          {project.category}
+        </p>
+        <h3 className="text-2xl font-semibold text-white group-hover:text-cyber-blue transition-colors">
+          {project.shortTitle}
+        </h3>
+        <p className="text-gray-300 mt-3">{project.overview}</p>
 
-    {project.status && (
-      <span
-        className={`ml-2 inline-flex items-center rounded-full border px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${statusStyles[project.statusType] || statusStyles.development
-          }`}
-      >
-        {project.status}
-      </span>
-    )}
-    {/* Tech Stack */}
-    <div className="flex flex-wrap gap-2 mt-4">
-      {project.techStack.slice(0, 3).map((tech) => (
-        <span key={tech} className="text-xs px-2 py-1 bg-white/5 rounded text-gray-400">
-          {tech}
-        </span>
-      ))}
-      {project.techStack.length > 3 && (
-        <span className="text-xs px-2 py-1 bg-cyber-blue/10 rounded text-cyber-blue">
-          +{project.techStack.length - 3}
-        </span>
+        <div className="flex flex-wrap gap-2 mt-5">
+          {project.tags.map((tag) => (
+            <span
+              key={tag}
+              className="text-xs px-2.5 py-1 rounded-full border border-white/10 bg-white/5 text-gray-300"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        <div className="mt-6 grid grid-cols-2 gap-3 text-sm">
+          <div className="rounded-lg border border-white/10 bg-white/5 p-3">
+            <p className="text-cyber-purple font-semibold mb-1">Tech Stack</p>
+            <p className="text-gray-400">{project.techStack.slice(0, 3).join(' • ')}</p>
+          </div>
+          {project.impact ? (
+            <div className="rounded-lg border border-white/10 bg-white/5 p-3">
+              <p className="text-cyber-purple font-semibold mb-1">Impact</p>
+              <p className="text-gray-400">{project.impact}</p>
+            </div>
+          ) : (
+            <div className="rounded-lg border border-white/10 bg-white/5 p-3">
+              <p className="text-cyber-purple font-semibold mb-1">Proof</p>
+              <p className="text-gray-400">{project.proof.summary}</p>
+            </div>
+          )}
+        </div>
+
+        <div className="mt-5 inline-flex items-center gap-2 text-cyber-blue text-sm font-medium">
+          <FiExternalLink />
+          Open technical breakdown
+        </div>
+      </div>
+    </motion.button>
+  );
+}
+
+function CompactProjectCard({ project, onClick }) {
+  return (
+    <motion.button
+      type="button"
+      whileHover={{ y: -4 }}
+      onClick={() => onClick(project)}
+      className="cyber-card text-left w-full h-full"
+    >
+      <p className="text-xs font-medium text-cyber-cyan uppercase tracking-[0.2em] mb-2">
+        {project.category}
+      </p>
+      <h3 className="text-xl font-semibold text-white">{project.shortTitle || project.title}</h3>
+      <p className="text-gray-400 mt-3 text-sm line-clamp-3">{project.overview}</p>
+      {project.impact && (
+        <p className="text-cyber-cyan/90 mt-3 text-sm line-clamp-2">{project.impact}</p>
       )}
-    </div>
+      {project.techStack?.length > 0 && (
+        <div className="flex flex-wrap gap-2 mt-4">
+          {project.techStack.slice(0, 4).map((tech) => (
+            <span
+              key={tech}
+              className="text-xs px-2.5 py-1 rounded-full border border-white/10 bg-white/5 text-gray-300"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+      )}
+    </motion.button>
+  );
+}
 
-    {/* Hover indicator */}
-    <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-      <FiExternalLink className="text-cyber-blue" />
+function DetailBlock({ icon: Icon, title, children }) {
+  return (
+    <div className="rounded-xl border border-white/10 bg-white/5 p-5">
+      <div className="flex items-center gap-2 mb-3">
+        <Icon className="text-cyber-blue" />
+        <h4 className="text-sm font-semibold text-cyber-cyan uppercase tracking-wider">{title}</h4>
+      </div>
+      <div className="text-gray-300">{children}</div>
     </div>
-  </motion.div>
-);
+  );
+}
 
-const ProjectModal = ({ project, onClose }) => {
+function ProofMedia({ project }) {
+  const { images, videos, imagePath, videoPath } = project.proof;
+
+  return (
+    <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+      <DetailBlock icon={FiImage} title="Image Proof">
+        {images.length > 0 ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {images.map((src, index) => (
+              <a
+                key={src}
+                href={src}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-xl overflow-hidden border border-white/10 bg-cyber-black/50 block"
+              >
+                <img
+                  src={src}
+                  alt={`${project.shortTitle} proof ${index + 1}`}
+                  className="w-full h-48 object-cover"
+                />
+              </a>
+            ))}
+          </div>
+        ) : (
+          <div className="space-y-2 text-sm">
+            <p>No proof images added yet.</p>
+          </div>
+        )}
+      </DetailBlock>
+
+      <DetailBlock icon={FiFilm} title="Video Proof">
+        {videos.length > 0 ? (
+          <div className="space-y-4">
+            {videos.map((src) => (
+              <video
+                key={src}
+                controls
+                className="w-full rounded-xl border border-white/10 bg-cyber-black/50"
+              >
+                <source src={src} />
+                Your browser does not support the video tag.
+              </video>
+            ))}
+          </div>
+        ) : (
+          <div className="space-y-2 text-sm">
+            <p>No proof videos added yet.</p>
+          </div>
+        )}
+      </DetailBlock>
+    </div>
+  );
+}
+
+function ProjectModal({ project, onClose }) {
   if (!project) return null;
+
+  const Icon = categoryIcons[project.category] || FiCpu;
+  const showCodeAvailability = project.codeAvailability?.show !== false;
 
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm"
       onClick={onClose}
     >
       <motion.div
-        initial={{ scale: 0.9, opacity: 0 }}
+        initial={{ scale: 0.96, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.9, opacity: 0 }}
-        onClick={(e) => e.stopPropagation()}
-        className="cyber-card max-w-2xl w-full max-h-[90vh] overflow-y-auto relative"
+        exit={{ scale: 0.96, opacity: 0 }}
+        onClick={(event) => event.stopPropagation()}
+        className="cyber-card max-w-5xl w-full max-h-[90vh] overflow-y-auto relative"
       >
-        {/* Close button */}
         <button
+          type="button"
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+          aria-label="Close project details"
         >
           <FiX size={24} />
         </button>
 
-        {/* Header */}
-        <div className="flex items-center gap-4 mb-6">
-          <div className="w-16 h-16 bg-gradient-to-br from-cyber-blue/20 to-cyber-purple/20 rounded-xl flex items-center justify-center">
-            <project.icon className="w-8 h-8 text-cyber-blue" />
-          </div>
+        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-8 pr-10">
           <div>
-            <span className="text-sm font-medium text-cyber-cyan uppercase tracking-wider">
+            <div className="w-16 h-16 bg-gradient-to-br from-cyber-blue/20 to-cyber-purple/20 rounded-xl flex items-center justify-center mb-4">
+              <Icon className="w-8 h-8 text-cyber-blue" />
+            </div>
+            <p className="text-sm font-medium text-cyber-cyan uppercase tracking-[0.25em]">
               {project.category}
-            </span>
-            <h2 className="text-2xl font-bold text-white mt-1">{project.title}</h2>
+            </p>
+            <h2 className="text-3xl font-bold text-white mt-2">{project.title}</h2>
+            <div className="flex flex-wrap gap-2 mt-4">
+              {project.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-gray-300"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
+
+          {showCodeAvailability && (
+            <div className="rounded-xl border border-cyber-blue/30 bg-cyber-blue/10 px-4 py-3 text-sm text-cyber-cyan max-w-sm">
+              <p className="font-semibold mb-1">{project.codeAvailability.label}</p>
+              <p className="text-gray-300">{project.codeAvailability.note}</p>
+            </div>
+          )}
         </div>
 
-        {/* Description */}
-        <p className="text-gray-300 mb-6">{project.description}</p>
-        {project.status && (
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-6">
+          <DetailBlock icon={FiClipboard} title="Overview">
+            <p>{project.overview}</p>
+          </DetailBlock>
+          <DetailBlock icon={FiFileText} title="Problem">
+            <p>{project.problem}</p>
+          </DetailBlock>
+          <DetailBlock icon={FiLayers} title="Architecture">
+            <p>{project.architecture}</p>
+          </DetailBlock>
+          <DetailBlock icon={FiUser} title="Role">
+            <p>{project.role}</p>
+          </DetailBlock>
+        </div>
+
+        {project.impact && (
           <div className="mb-6">
-            <span
-              className={`inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-wider ${statusStyles[project.statusType] || statusStyles.development
-                }`}
-            >
-              {project.status}
-            </span>
+            <DetailBlock icon={FiTrendingUp} title="Impact">
+              <p>{project.impact}</p>
+            </DetailBlock>
           </div>
         )}
 
-        {/* Tech Stack */}
-        <div className="mb-6">
-          <h4 className="text-sm font-semibold text-cyber-purple mb-3">Tech Stack</h4>
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-6">
+          <DetailBlock icon={FiCheckCircle} title="Working">
+            <ul className="space-y-2">
+              {project.working.map((item) => (
+                <li key={item} className="flex items-start gap-2">
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-cyber-blue shrink-0" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </DetailBlock>
+          <DetailBlock icon={FiTool} title="Challenges">
+            <ul className="space-y-2">
+              {project.challenges.map((item) => (
+                <li key={item} className="flex items-start gap-2">
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-cyber-purple shrink-0" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </DetailBlock>
+        </div>
+
+        <DetailBlock icon={FiCode} title="Tech Stack">
           <div className="flex flex-wrap gap-2">
             {project.techStack.map((tech) => (
               <span key={tech} className="skill-tag">
@@ -491,92 +320,79 @@ const ProjectModal = ({ project, onClose }) => {
               </span>
             ))}
           </div>
+        </DetailBlock>
+
+        <div className="mt-6 mb-6">
+          <DetailBlock icon={FiImage} title="Proof Checklist">
+            <p>{project.proof.summary}</p>
+          </DetailBlock>
         </div>
 
-        {/* Features */}
-        <div className="mb-6">
-          <h4 className="text-sm font-semibold text-cyber-purple mb-3">Key Features</h4>
-          <ul className="space-y-2">
-            {project.features.map((feature, index) => (
-              <li key={index} className="flex items-center gap-2 text-gray-300">
-                <span className="w-1.5 h-1.5 bg-cyber-blue rounded-full" />
-                {feature}
-              </li>
+        <ProofMedia project={project} />
+
+        <div className="mt-8 flex flex-col sm:flex-row gap-4">
+          {showCodeAvailability &&
+            (project.codeAvailability.href ? (
+              <a
+                href={project.codeAvailability.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glow-button flex-1 flex items-center justify-center gap-2"
+              >
+                <FiCode />
+                View Code
+              </a>
+            ) : (
+              <button
+                type="button"
+                className="glow-button flex-1 flex items-center justify-center gap-2 opacity-80"
+              >
+                <FiCode />
+                {project.codeAvailability.label}
+              </button>
             ))}
-          </ul>
-        </div>
-
-        {/* Actions */}
-        <div className="flex gap-4 pt-4 border-t border-white/10">
-          <button className="glow-button flex-1 flex items-center justify-center gap-2">
-            <FiGithub />
-            View Code
-          </button>
-          <button className="px-6 py-3 bg-cyber-purple/20 border border-cyber-purple/50 text-cyber-purple font-semibold rounded-lg hover:bg-cyber-purple/30 transition-all flex-1 flex items-center justify-center gap-2">
+          <a
+            href="#contact"
+            onClick={onClose}
+            className={`px-6 py-3 bg-cyber-purple/20 border border-cyber-purple/50 text-cyber-purple font-semibold rounded-lg hover:bg-cyber-purple/30 transition-all flex items-center justify-center gap-2 ${
+              showCodeAvailability ? 'flex-1' : 'w-full'
+            }`}
+          >
             <FiExternalLink />
-            Live Demo
-          </button>
+            Request project proof
+          </a>
         </div>
       </motion.div>
     </motion.div>
   );
-};
+}
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
-  const [activeCategory, setActiveCategory] = useState('All');
-
-  const categories = ['All', 'Software Development', 'Electronic and Embedded System'];
-
-  const filteredProjects = activeCategory === 'All' 
-    ? projects 
-    : projects.filter(project => project.mainCategory === activeCategory);
+  const [showAll, setShowAll] = useState(false);
 
   return (
     <section id="projects" className="relative py-20 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-cyber-dark to-cyber-black" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="section-title">Projects</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            A showcase of my technical projects spanning robotics, automation, and electronics.
+          <h2 className="section-title">Flagship Projects</h2>
+          <p className="text-gray-400 max-w-3xl mx-auto">
+            Built around proof-first engineering narratives: what problem was solved,
+            how the system works, what technical tradeoffs mattered, and where proof assets belong.
           </p>
         </motion.div>
 
-        {/* Category Filter Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-3 mb-12"
-        >
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`px-5 py-2.5 rounded-lg font-medium transition-all duration-300 ${
-                activeCategory === category
-                  ? 'bg-cyber-blue text-cyber-dark glow-button'
-                  : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/10'
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </motion.div>
-
-        {/* Project Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((project, index) => (
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {featuredProjects.map((project, index) => (
             <motion.div
-              key={project.title}
+              key={project.slug}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -586,9 +402,54 @@ export default function Projects() {
             </motion.div>
           ))}
         </div>
+
+        <div className="mt-14 flex justify-center">
+          <button
+            type="button"
+            onClick={() => setShowAll((current) => !current)}
+            className="glow-button flex items-center justify-center gap-2"
+          >
+            {showAll ? (
+              <>
+                Hide Projects <FiChevronUp />
+              </>
+            ) : (
+              <>
+                View All Projects <FiChevronDown />
+              </>
+            )}
+          </button>
+        </div>
+
+        {showAll && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mt-14"
+          >
+            <div className="text-center mb-10">
+              <h3 className="text-3xl font-orbitron text-white">Additional Projects</h3>
+              <p className="text-gray-400 max-w-2xl mx-auto mt-3">
+                Supporting projects and experiments that extend the broader engineering profile.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+              {otherProjects.map((project, index) => (
+                <motion.div
+                  key={project.slug || project.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.06 }}
+                >
+                  <CompactProjectCard project={project} onClick={setSelectedProject} />
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        )}
       </div>
 
-      {/* Project Modal */}
       <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
     </section>
   );

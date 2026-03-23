@@ -3,17 +3,30 @@ import { motion } from 'framer-motion';
 import { FiArrowRight, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 import profileImg from '../../me.png';
 
+const roles = [
+  'Embedded Systems Engineer',
+  'IoT Systems Builder',
+  'Robotics & Automation Engineer',
+];
+
 export default function Hero() {
   const [text, setText] = useState('');
   const fullText = "Hi, I'm Nand Kishor";
-  const roles = [
-    "Full Stack Developer",
-    "Electronics Engineer", 
-    "Robotics Innovator"
-  ];
   const [roleIndex, setRoleIndex] = useState(0);
   const [roleText, setRoleText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
+  const [particles] = useState(() => {
+    const width = typeof window === 'undefined' ? 1440 : window.innerWidth;
+    const height = typeof window === 'undefined' ? 900 : window.innerHeight;
+
+    return Array.from({ length: 20 }, () => ({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      targetY: Math.random() * -500,
+      duration: Math.random() * 10 + 10,
+      delay: Math.random() * 5,
+    }));
+  });
 
   useEffect(() => {
     // Typing animation for main text
@@ -65,22 +78,22 @@ export default function Hero() {
 
       {/* Neural network animation */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(20)].map((_, i) => (
+        {particles.map((particle, i) => (
           <motion.div
             key={i}
             className="absolute w-2 h-2 bg-cyber-blue/30 rounded-full"
             initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              x: particle.x,
+              y: particle.y,
             }}
             animate={{
-              y: [null, Math.random() * -500],
+              y: [null, particle.targetY],
               opacity: [0, 1, 0],
             }}
             transition={{
-              duration: Math.random() * 10 + 10,
+              duration: particle.duration,
               repeat: Infinity,
-              delay: Math.random() * 5,
+              delay: particle.delay,
             }}
           />
         ))}
@@ -137,8 +150,8 @@ export default function Hero() {
 
           {/* Description */}
           <p className="text-gray-400 max-w-2xl mx-auto mb-12 text-lg">
-            Full Stack Developer & Electronics Engineer specializing in building 
-            intelligent systems that merge hardware and software.
+            Embedded and IoT-focused engineer building hardware-software systems with
+            practical proof, measurable functionality, and real deployment intent.
           </p>
 
           {/* CTA Buttons */}

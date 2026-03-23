@@ -1,16 +1,120 @@
-# React + Vite
+# Nand Kishor Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About Portfolio
 
-Currently, two official plugins are available:
+This portfolio is designed as a proof-driven engineering portfolio rather than a claims-based showcase.
+It highlights a focused set of flagship projects and gives each one a structured technical breakdown:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- overview
+- problem
+- architecture
+- working
+- challenges
+- role
+- proof
+- code availability
 
-## React Compiler
+The frontend is built with React, Vite, Tailwind CSS, and Framer Motion.
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## Engineering Focus
 
-## Expanding the ESLint configuration
+Primary focus areas:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Embedded Systems
+- IoT Systems
+- PCB Design
+- Sensors and Actuators
+- Robotics
+- Motor Control
+- Power Electronics
+- Device and Workflow Automation
+
+## Projects Overview
+
+Current flagship projects:
+
+- Solar Monitoring & Environmental Analytics System
+- Bio-Signal Amplifier
+- Custom High-Torque Smart Servo Motor
+
+These projects were chosen because they best support an embedded and systems engineering profile.
+
+## Proof Structure
+
+Project proof assets live under `public/assets/projects/`.
+
+Structure:
+
+```text
+public/
+  assets/
+    projects/
+      solar-monitoring/
+        images/
+        videos/
+      bio-amplifier/
+        images/
+        videos/
+      custom-servo/
+        images/
+        videos/
+```
+
+Project content and proof metadata live in `src/data/projects.js`.
+
+Skills are maintained in `src/data/skills.js`.
+
+## How to Add Project Proof
+
+1. Put image files into the correct `images/` folder.
+2. Put video files into the correct `videos/` folder.
+3. Open `src/data/projects.js`.
+4. Find the matching project by `slug`.
+5. Add filenames to `proof.imageFiles` and `proof.videoFiles`.
+6. If public code can be shared, add the repo link in `codeAvailability.href`.
+
+Example:
+
+```js
+proof: {
+  summary: 'Add board photos, oscilloscope captures, and demo videos.',
+  imageFiles: ['board-front.jpg', 'scope-capture.png'],
+  videoFiles: ['demo.mp4'],
+},
+codeAvailability: {
+  label: 'Code available on request',
+  note: 'Private firmware and hardware files are not exposed publicly.',
+  // TODO: Add GitHub repo link or "Available on request"
+  href: '',
+},
+```
+
+## Code Availability Policy
+
+This portfolio does not expose private firmware, hardware design files, or customer-sensitive automation code by default.
+
+Policy:
+
+- Public code links can be added when safe to share.
+- Otherwise, projects should show `Code available on request`.
+- The portfolio should prioritize proof assets and technical credibility over raw code exposure.
+
+## Development
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run locally:
+
+```bash
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```

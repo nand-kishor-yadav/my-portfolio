@@ -4,31 +4,49 @@ import { FiCpu, FiCode, FiZap, FiTarget } from 'react-icons/fi';
 const highlights = [
   {
     icon: FiCode,
-    title: 'Full Stack Development',
-    description: 'Building scalable web apps plus production-ready Android and Windows applications end-to-end.',
+    title: 'System Integration',
+    description: 'Connecting firmware, electronics, dashboards, and software workflows into complete working systems.',
   },
   {
     icon: FiCpu,
     title: 'Electronics & Embedded',
-    description: 'Designing intelligent hardware systems and IoT solutions.',
+    description: 'Designing embedded hardware, control systems, and instrumentation-focused electronics.',
   },
   {
     icon: FiZap,
     title: 'Robotics & Automation',
-    description: 'Creating autonomous systems and automating complex processes.',
+    description: 'Building motion, automation, and device-control workflows with practical engineering constraints.',
   },
   {
     icon: FiTarget,
-    title: 'Innovation',
-    description: 'Merging software and hardware to build cutting-edge solutions.',
+    title: 'Proof-Driven Work',
+    description: 'Focusing on projects that can be explained through architecture, working demos, and physical proof.',
   },
 ];
 
 const skills = [
-  'Python', 'Java', 'Kotlin', 'HTML', 'CSS', 'JavaScript', 'PHP', 'SQL', 'React.js', 'Node.js',
-  'Android SDK', 'Windows Apps', 'Selenium', 'Appium', 'ADB',
-  'C/C++', 'ESP32', 'GSM', 'PCB Design', 'Embedded Systems',
-  'IoT', 'Robotics'
+  'Embedded Systems',
+  'C/C++',
+  'ESP32',
+  'PCB Design',
+  'GSM',
+  'IoT',
+  'Robotics',
+  'Android SDK',
+  'Appium',
+  'Selenium',
+  'ADB',
+  'Python',
+  'Java',
+  'Kotlin',
+  'JavaScript',
+  'PHP',
+  'SQL',
+  'Node.js',
+  'React.js',
+  'HTML',
+  'CSS',
+  'Windows Apps'
 ];
 
 export default function About() {
@@ -50,9 +68,9 @@ export default function About() {
         >
           <h2 className="section-title">About Me</h2>
           <p className="text-gray-400 max-w-3xl mx-auto text-lg">
-            I am a multidisciplinary engineer blending software development and electronics innovation.
-            With expertise in full stack development, embedded systems, robotics, and automation,
-            I build intelligent systems that merge hardware and software.
+            I am a multidisciplinary engineer focused on embedded systems, IoT, robotics,
+            and automation. My strongest work sits at the intersection of electronics,
+            control, instrumentation, and the software needed to operate and observe those systems.
           </p>
         </motion.div>
 
@@ -86,7 +104,7 @@ export default function About() {
           className="relative"
         >
           <h3 className="text-2xl font-orbitron text-center text-cyber-cyan mb-8">
-            What I Work With
+            Engineering Areas
           </h3>
           <div className="flex flex-wrap justify-center gap-4">
             {skills.map((skill, index) => (
