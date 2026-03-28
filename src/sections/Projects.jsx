@@ -375,7 +375,7 @@ export default function Projects() {
               </>
             ) : (
               <>
-                View All Projects <FiChevronDown />
+                 Other Explorations <FiChevronDown />
               </>
             )}
           </button>
