@@ -1,0 +1,124 @@
+{
+    "Project Name": [
+        "Bio-Amplifier"
+    ],
+    "Category": [
+        "Biomedical Electronics",
+        "Embedded Systems",
+        "PCB Design"
+    ],
+    "Project Type": [
+        "Practical implementation project"
+    ],
+    "Complexity": [
+        "Intermediate to advanced"
+    ],
+    "Signal Type": [
+        "EMG (Electromyography)"
+    ],
+    "Application": [
+        "Muscle signal-based actuator control"
+    ],
+    "Architecture": [
+        "Analog amplification plus embedded processing"
+    ],
+    "End-to-End Pipeline": [
+        "Muscle signal -> amplification -> filtering -> microcontroller -> actuation"
+    ],
+    "Amplifier IC": [
+        "LM358"
+    ],
+    "Gain": [
+        "Approx 100x"
+    ],
+    "Input Type": [
+        "Differential electrode-based input"
+    ],
+    "Filtering": [
+        "Low-pass filter",
+        "Used to remove high-frequency noise and stabilize the EMG signal"
+    ],
+    "PCB Design Tools": [
+        "EasyEDA",
+        "Proteus"
+    ],
+    "PCB Fabrication": [
+        "Manually fabricated using a copper-clad board"
+    ],
+    "Hardware Features": [
+        "Compact analog signal routing",
+        "Dedicated electrode input terminals",
+        "Stable power and grounding layout"
+    ],
+    "Power Supply": [
+        "Arduino 5V supply"
+    ],
+    "Input Interface": [
+        "3-electrode EMG setup"
+    ],
+    "Output Interface": [
+        "Analog signal output to Arduino"
+    ],
+    "Microcontroller": [
+        "Arduino"
+    ],
+    "Embedded Processing": [
+        "Analog signal reading",
+        "Basic signal thresholding"
+    ],
+    "Output Control": [
+        "Servo motor actuation based on muscle activity"
+    ],
+    "Testing Type": [
+        "Real-world testing"
+    ],
+    "Testing Method": [
+        "Live EMG signal acquisition from arm muscles"
+    ],
+    "Testing Result": [
+        "Successful control of a servo motor using muscle signals"
+    ],
+    "Validation": [
+        "Signal amplification confirmed",
+        "Noise reduction effective for basic control",
+        "System responsiveness verified"
+    ],
+    "Core Features": [
+        "Real-time EMG signal acquisition",
+        "Analog signal amplification with 100x gain",
+        "Noise filtering using a low-pass filter",
+        "Custom PCB with manual fabrication",
+        "Direct human-to-machine interaction",
+        "Servo control using biological signals"
+    ],
+    "Engineering Learning": [
+        "Bio-signal acquisition and conditioning",
+        "Operational amplifier-based circuit design",
+        "Analog filtering techniques",
+        "PCB design and fabrication",
+        "Embedded system integration",
+        "Human-machine interface development"
+    ],
+    "Limitations": [
+        "No notch filter for 50/60Hz noise removal",
+        "Limited gain tuning flexibility",
+        "No instrumentation amplifier, resulting in lower precision",
+        "No advanced signal processing such as RMS or envelope detection"
+    ],
+    "Future Improvements": [
+        "Upgrade to an instrumentation amplifier such as AD620",
+        "Add a notch filter for power line interference",
+        "Implement multi-stage amplification with adjustable gain",
+        "Add digital signal processing for better control",
+        "Add wireless data transmission using Bluetooth or WiFi",
+        "Support multi-channel EMG input"
+    ],
+    "Portfolio Value": [
+        "Shows a complete bio-signal to actuation pipeline",
+        "Demonstrates real-world EMG control with a custom PCB",
+        "Acts as a foundation for prosthetics, robotics, and human-machine interface systems"
+    ],
+    "Code Visibility": [
+        "Private"
+    ]
+}

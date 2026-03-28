@@ -1,0 +1,135 @@
+{
+    "Project Name": [
+        "Mech Tracker"
+    ],
+    "Slug": [
+        "mech-tracker"
+    ],
+    "Project Type": [
+        "Mobile application",
+        "Security system"
+    ],
+    "Platform": [
+        "Android"
+    ],
+    "Purpose": [
+        "Anti-theft device tracking and recovery"
+    ],
+    "Status": [
+        "Testing and optimization"
+    ],
+    "Problem": [
+        "Standard device tracking solutions fail when connectivity options such as GPS or internet are unavailable"
+    ],
+    "Solution": [
+        "A multi-layer fallback tracking and control system that ensures device traceability and remote access under varying connectivity conditions"
+    ],
+    "Architecture": [
+        "Hybrid mobile and backend system",
+        "Background service",
+        "Multi-channel communication",
+        "Web-based control dashboard"
+    ],
+    "System Type": [
+        "Distributed tracking and control system"
+    ],
+    "Pipeline": [
+        "Background service",
+        "Sensor and data collection",
+        "Fallback decision engine",
+        "Communication layer",
+        "Server or API",
+        "Web dashboard control"
+    ],
+    "Tracking Methods": [
+        "GPS-based tracking",
+        "SIM-based SMS coordinate relay",
+        "UWB-based positioning",
+        "Bluetooth Low Energy BLE mesh",
+        "Peer device relay through nearby Mech-Tracker instances"
+    ],
+    "Tracking Strategy": [
+        "Dynamic fallback switching based on connectivity and hardware availability"
+    ],
+    "Control System": [
+        "Primary internet-based control through API or Firebase",
+        "Fallback SMS command system",
+        "Web dashboard for remote device management"
+    ],
+    "Core Features": [
+        "Real-time device tracking",
+        "Multi-account and multi-device monitoring",
+        "Background persistent service",
+        "Auto-start on boot"
+    ],
+    "Security Features": [
+        "Remote lock and wipe",
+        "SIM change detection",
+        "Wrong unlock attempt alerts",
+        "Anti-uninstall protection",
+        "Notification and UI restrictions in lost mode"
+    ],
+    "Monitoring Features": [
+        "Silent photo capture with permission",
+        "Audio recording with permission",
+        "Device status tracking"
+    ],
+    "Modes": [
+        "Idle Mode for passive monitoring",
+        "Medium Mode for controlled access",
+        "Lost Mode for full security activation"
+    ],
+    "Permissions": [
+        "Location including fine and background access",
+        "SMS send, receive, and read",
+        "Camera",
+        "Microphone",
+        "Bluetooth and UWB",
+        "Storage access",
+        "Boot completed",
+        "Wake lock and battery optimization control"
+    ],
+    "Data Management": [
+        "Server-side database storage",
+        "Real-time internet sync with SMS fallback",
+        "User-controlled dashboard login"
+    ],
+    "Performance": [
+        "High reliability due to multi-layer fallback system",
+        "Operates under limited connectivity conditions",
+        "Supports multiple devices and relay-based tracking"
+    ],
+    "Challenges": [
+        "Handling diverse hardware and connectivity conditions",
+        "Maintaining persistent background execution under OS restrictions",
+        "Designing reliable fallback mechanisms",
+        "Ensuring secure and permission-compliant implementation"
+    ],
+    "Applications": [
+        "Personal device security",
+        "Anti-theft systems",
+        "Asset tracking solutions",
+        "Distributed tracking networks"
+    ],
+    "Learning Focus": [
+        "Android background services",
+        "Multi-channel communication systems",
+        "Fallback-based system design",
+        "Security-focused mobile architecture",
+        "Real-time tracking systems"
+    ],
+    "Outcome": [
+        "Demonstrates expertise in building resilient mobile systems with distributed tracking and remote control capabilities"
+    ],
+    "Portfolio Value": [
+        "Shows an advanced mobile security and tracking system",
+        "Highlights multi-layer fallback tracking with distributed relay capability",
+        "Demonstrates a real-world anti-theft application with robust engineering design"
+    ],
+    "Code Visibility": [
+        "Private"
+    ],
+    "Application Visibility": [
+        "Private"
+    ]
+}

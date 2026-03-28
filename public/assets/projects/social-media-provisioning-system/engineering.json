@@ -1,0 +1,95 @@
+{
+    "Project Name": [
+        "Social Media Provisioning System"
+    ],
+    "Category": [
+        "Mobile Automation System"
+    ],
+    "Project Type": [
+        "Multi-Stage Workflow Automation"
+    ],
+    "Description": [
+        "A dependency-driven mobile automation platform that provisions social media accounts by orchestrating multi-stage workflows across applications on real Android devices."
+    ],
+    "Environment": [
+        "Physical Android devices (Pixel series)",
+        "Custom Android distributions (GrapheneOS, LineageOS)"
+    ],
+    "Execution Mode": [
+        "Parallel multi-device execution"
+    ],
+    "Workflow Engine": [
+        "Step-based dynamic workflow execution",
+        "Conditional dependency resolution (Gmail -> Instagram)",
+        "User-configurable execution paths via centralized dashboard",
+        "Support for partial execution (Gmail-only mode)"
+    ],
+    "Dependency Logic": [
+        "If Gmail credentials are provided -> skip Gmail creation -> proceed to Instagram",
+        "If not provided -> create Gmail -> reuse credentials for Instagram",
+        "Execution path determined via dashboard configuration"
+    ],
+    "Cross-Application Orchestration": [
+        "Seamless context switching between Gmail and Instagram applications",
+        "Real-time OTP retrieval from Gmail during Instagram verification",
+        "Credential propagation across applications within a single session"
+    ],
+    "Data Handling": [
+        "Ephemeral credential storage during execution",
+        "Persistent storage in local files and centralized system",
+        "Separate logging for partial and complete workflow states"
+    ],
+    "Core Features": [
+        "Automated Gmail account provisioning",
+        "Automated Instagram account provisioning",
+        "Multi-stage execution with dependency awareness",
+        "High-throughput parallel execution across devices",
+        "Centralized orchestration via web dashboard",
+        "Real-time logging and execution tracking"
+    ],
+    "Automation Engine": [
+        "Dynamic UI detection with multi-layer fallback strategies",
+        "Session persistence across multi-application workflows",
+        "Retry logic for Instagram failures using existing Gmail credentials",
+        "Workflow continuation after application restarts",
+        "Crash detection with controlled session completion"
+    ],
+    "Failure Handling": [
+        "Invalidation of failed Gmail inputs (e.g., verification failure)",
+        "Retry mechanism for Instagram without re-provisioning Gmail",
+        "Session termination after repeated unrecoverable failures",
+        "Recovery handling for delayed OTP and app lifecycle interruptions"
+    ],
+    "Performance Metrics": [
+        "500+ end-to-end workflow executions",
+        "Average execution time: 5–6 minutes per full cycle",
+        "Success rate aligned with Gmail provisioning system",
+        "Parallel execution capacity: 100+ devices"
+    ],
+    "Challenges": [
+        "Cross-application state synchronization",
+        "Handling delayed OTP delivery and app lifecycle interruptions",
+        "Maintaining workflow continuity after unexpected restarts",
+        "Ensuring stable session management across multi-stage execution"
+    ],
+    "Testing": [
+        "Real-device end-to-end validation",
+        "Cross-application workflow testing",
+        "Verification of partial and complete execution states"
+    ],
+    "Artifacts": [
+        "Execution logs",
+        "Testing screenshots",
+        "Workflow recordings"
+    ],
+    "Tech Stack": [
+        "Java",
+        "Appium",
+        "ADB",
+        "UIAutomator",
+        "Android"
+    ],
+    "Code Visibility": [
+        "Private"
+    ]
+}

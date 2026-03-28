@@ -1,0 +1,25 @@
+Battery Management System (3S Li-ion) – Analog Design
+
+This project is a custom-designed 3S Lithium-ion Battery Management System (BMS) developed as part of PCB design and power electronics learning. The system is designed specifically for 18650 Li-ion cells connected in a 3-series configuration, operating within an approximate voltage range of 9V to 12.6V under normal conditions.
+
+The primary focus of this design is passive cell balancing using an analog approach. Instead of relying on microcontrollers, the system uses comparator-based control logic and MOSFET switching to maintain voltage uniformity across individual cells.
+
+Each cell is monitored individually through voltage sensing circuits. When a cell exceeds a defined threshold, the balancing circuit activates and dissipates excess charge through controlled pathways, ensuring that all cells remain within safe voltage limits and preventing imbalance over charge cycles.
+
+The system is implemented using discrete analog components, including:
+- Comparators / operational amplifiers for voltage detection
+- MOSFETs for switching and discharge control
+- Passive components for threshold setting and stability
+
+This project was built purely for learning and focuses on:
+- Understanding BMS fundamentals
+- Designing multi-cell battery monitoring circuits
+- Analog control system implementation
+- PCB layout practices for power electronics
+
+Although the design has not been physically tested, it reflects a structured approach to battery safety and balancing logic at the hardware level.
+
+Tools used for design:
+- EasyEDA / Proteus (schematic + PCB)
+
+This project demonstrates foundational knowledge in battery systems, analog circuit design, and PCB engineering.

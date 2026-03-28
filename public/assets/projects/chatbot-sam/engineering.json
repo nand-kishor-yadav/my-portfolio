@@ -1,0 +1,172 @@
+{
+  "Project Type": [
+    "Local-first autonomous AI agent runtime"
+  ],
+
+  "System Name": [
+    "SAM (Self-Adaptive Machine)"
+  ],
+
+  "Primary Goal": [
+    "Execute user requests as structured, stateful work through planning, tool orchestration, task tracking, memory, evaluation, and runtime control instead of a stateless conversational loop"
+  ],
+
+  "Interaction Modes": [
+    "WebUI",
+    "CLI",
+    "Desktop launcher",
+    "HTTP API"
+  ],
+
+  "Execution Style": [
+    "Single-step execution",
+    "Multi-step structured planning",
+    "Graph-based execution flows",
+    "Recurring autonomous background task cycles"
+  ],
+
+  "Deployment Style": [
+    "Local-first runtime with optional remote API integration when explicitly configured"
+  ],
+
+  "High-Level Flow": [
+    "User -> Interface (WebUI/CLI/API) -> SAMApp -> Intent Engine -> Planner -> Tool Router -> Scheduler / Task Engine -> Tool Executor -> Critic -> Replanner -> Memory / Identity Layer -> Response Layer -> UI"
+  ],
+
+  "Backend Stack": [
+    "Python",
+    "ThreadingHTTPServer (custom API layer)",
+    "ThreadPoolExecutor (concurrent execution)",
+    "asyncio (non-blocking task handling)"
+  ],
+
+  "Frontend Stack": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+
+  "Config and Data": [
+    "YAML (runtime configuration)",
+    "JSON (structured state, API contracts, and persistence)"
+  ],
+
+  "LLM Integration": [
+    "LM Studio (local model inference)",
+    "OpenAI-compatible API abstraction layer"
+  ],
+
+  "UI Views": [
+    "Chat interface (primary interaction surface)",
+    "Task dashboard (execution tracking and lifecycle visibility)",
+    "Developer panel (runtime inspection and control)"
+  ],
+
+  "Core Components": [
+    "SAMApp (central orchestration and lifecycle management)",
+    "Intent Engine (intent classification and execution mode selection)",
+    "Planner (structured plan generation with step decomposition)",
+    "Tool Router (tool selection based on plan, policy, and signals)",
+    "Task Engine (persistent task state and execution tracking)",
+    "Scheduler (priority-based background task execution)",
+    "Tool Executor (adapters for filesystem, shell, browser, and APIs)",
+    "Critic (step-level evaluation and quality control)",
+    "Replanner (adaptive recovery and plan correction)",
+    "Memory System (multi-layer persistent memory architecture)",
+    "Identity Layer (behavior rules, goals, and consistency control)",
+    "WebUI (real-time runtime monitoring and control interface)"
+  ],
+
+  "Persistent Runtime State": [
+    "Root directory: .sam_runtime/",
+    "Task state (progress, retries, failures)",
+    "Session tracking",
+    "Conversation history",
+    "User and system memory layers",
+    "Telemetry and execution logs",
+    "Event streams",
+    "Learning and adaptation data",
+    "Research and notes storage",
+    "Project-specific knowledge base",
+    "Background task scheduling records"
+  ],
+
+  "Key Capabilities": [
+    "Structured task decomposition and multi-step execution planning",
+    "LLM-assisted intent classification and routing",
+    "Step-level execution with retry, failure handling, and replanning",
+    "Persistent task tracking with full execution history",
+    "Autonomous background task cycles via scheduler",
+    "Long-term memory with conflict-aware updates",
+    "Identity-driven behavior consistency across sessions",
+    "Streaming (SSE) and standard JSON API interfaces",
+    "Real-time runtime monitoring and control via WebUI"
+  ],
+
+  "Engineering Focus": [
+    "Designing an agent runtime instead of a stateless chatbot wrapper",
+    "Making execution observable through task state, logs, and UI surfaces",
+    "Persisting structured runtime state across sessions",
+    "Integrating planning, execution, evaluation, and memory into a unified system",
+    "Supporting both interactive workflows and autonomous background execution"
+  ],
+
+  "Monitoring Features": [
+    "Live task execution tracking",
+    "Retry and failure counters",
+    "Detailed execution logs",
+    "Scheduler state visibility",
+    "Trust and audit inspection panels",
+    "Session and history browser",
+    "Real-time activity feed"
+  ],
+
+  "Visual Direction": [
+    "Jarvis-inspired sci-fi runtime interface",
+    "Glow-based UI elements and pulse indicators",
+    "System-strip layout for real-time monitoring and control"
+  ],
+
+  "Primary API Endpoints": [
+    "POST /api/chat (standard interaction)",
+    "POST /api/stream (SSE streaming)",
+    "GET /api/tasks (task listing)",
+    "GET /api/tasks/<id> (task details)",
+    "POST /api/tasks/<id>/control (task lifecycle control)",
+    "GET /api/settings",
+    "POST /api/settings",
+    "GET /api/dev/* (developer inspection tools)"
+  ],
+
+  "Additional Endpoints": [
+    "GET /health (runtime health check)",
+    "GET /api/sessions",
+    "GET /api/history",
+    "GET /api/trust",
+    "GET /api/audit",
+    "POST /api/dev/auth"
+  ],
+
+  "Environment": [
+    "Python 3.10+",
+    "Windows-first development environment",
+    "Default LLM provider: LM Studio",
+    "Default endpoint: http://localhost:1234/v1/chat/completions",
+    "Local bind host: 127.0.0.1"
+  ],
+
+  "Proof Assets Available": [
+    "WebUI screenshots (chat, task dashboard, developer panel)",
+    "Recorded runtime demonstration video",
+    "Testing and validation screenshots"
+  ],
+
+  "Code Visibility": [
+    "Private (system behavior and architecture demonstrated through proof assets)"
+  ],
+
+  "Notes": [
+    "Designed as a full agent runtime system rather than a UI wrapper over an LLM",
+    "Focuses on execution lifecycle, observability, and persistent intelligence across sessions"
+  ]
+}

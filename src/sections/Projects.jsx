@@ -9,30 +9,40 @@ import {
   FiCpu,
   FiExternalLink,
   FiFileText,
-  FiFilm,
-  FiImage,
   FiLayers,
   FiTool,
   FiTrendingUp,
   FiUser,
   FiX,
 } from 'react-icons/fi';
+import ProjectProof from '../components/ProjectProof';
 import { projects } from '../data/projects';
 
-const featuredProjectTitles = new Set([
-  'Autonomous Solar Panel Cleaning System with Centralized Master Controller',
-  'Custom High-Torque Smart Servo Motor',
-  'Solar Monitoring & Environmental Analytics System',
-  'Bio-Signal Amplifier',
+const featuredProjectSlugs = new Set([
+  'solar-cleaning-system',
+  'custom-servo',
+  'solar-monitoring',
+  'bio-amplifier',
 ]);
 
-const featuredProjects = projects.filter((project) => featuredProjectTitles.has(project.title));
-const otherProjects = projects.filter((project) => !featuredProjectTitles.has(project.title));
+const featuredProjects = projects.filter((project) => featuredProjectSlugs.has(project.slug));
+const otherProjects = projects.filter((project) => !featuredProjectSlugs.has(project.slug));
 
 const categoryIcons = {
   'IoT / Embedded Systems': FiCpu,
   'Medical Electronics / Signal Conditioning': FiTool,
   'Embedded Systems / Power Electronics / Mechanical Design': FiLayers,
+  'Embedded Systems / IoT / Robotics': FiLayers,
+  Robotics: FiLayers,
+  Automation: FiTool,
+  'Automation / Web Scraping': FiTool,
+  'Automation / Mobile Automation': FiTool,
+  'AI Systems / Software': FiCpu,
+  'Android Application': FiCpu,
+  'Android + Web Application': FiCpu,
+  'Web Application / Analytics': FiCpu,
+  'Device Automation': FiTool,
+  Electronics: FiLayers,
 };
 
 function ProjectCard({ project, onClick }) {
@@ -81,10 +91,19 @@ function ProjectCard({ project, onClick }) {
           ))}
         </div>
 
-        <div className="mt-6 grid grid-cols-2 gap-3 text-sm">
+        <div className="mt-6 space-y-3 text-sm">
           <div className="rounded-lg border border-white/10 bg-white/5 p-3">
             <p className="text-cyber-purple font-semibold mb-1">Tech Stack</p>
-            <p className="text-gray-400">{project.techStack.slice(0, 3).join(' • ')}</p>
+            <div className="flex flex-wrap gap-2">
+              {project.techStack.slice(0, 3).map((tech) => (
+                <span
+                  key={tech}
+                  className="text-xs px-2.5 py-1 rounded-full border border-white/10 bg-white/5 text-gray-300 whitespace-nowrap"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
           </div>
           {project.impact ? (
             <div className="rounded-lg border border-white/10 bg-white/5 p-3">
@@ -94,7 +113,7 @@ function ProjectCard({ project, onClick }) {
           ) : (
             <div className="rounded-lg border border-white/10 bg-white/5 p-3">
               <p className="text-cyber-purple font-semibold mb-1">Proof</p>
-              <p className="text-gray-400">{project.proof.summary}</p>
+              <p className="text-gray-400">Proof is loaded dynamically from the project workspace.</p>
             </div>
           )}
         </div>
@@ -148,61 +167,6 @@ function DetailBlock({ icon: Icon, title, children }) {
         <h4 className="text-sm font-semibold text-cyber-cyan uppercase tracking-wider">{title}</h4>
       </div>
       <div className="text-gray-300">{children}</div>
-    </div>
-  );
-}
-
-function ProofMedia({ project }) {
-  const { images, videos, imagePath, videoPath } = project.proof;
-
-  return (
-    <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
-      <DetailBlock icon={FiImage} title="Image Proof">
-        {images.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {images.map((src, index) => (
-              <a
-                key={src}
-                href={src}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-xl overflow-hidden border border-white/10 bg-cyber-black/50 block"
-              >
-                <img
-                  src={src}
-                  alt={`${project.shortTitle} proof ${index + 1}`}
-                  className="w-full h-48 object-cover"
-                />
-              </a>
-            ))}
-          </div>
-        ) : (
-          <div className="space-y-2 text-sm">
-            <p>No proof images added yet.</p>
-          </div>
-        )}
-      </DetailBlock>
-
-      <DetailBlock icon={FiFilm} title="Video Proof">
-        {videos.length > 0 ? (
-          <div className="space-y-4">
-            {videos.map((src) => (
-              <video
-                key={src}
-                controls
-                className="w-full rounded-xl border border-white/10 bg-cyber-black/50"
-              >
-                <source src={src} />
-                Your browser does not support the video tag.
-              </video>
-            ))}
-          </div>
-        ) : (
-          <div className="space-y-2 text-sm">
-            <p>No proof videos added yet.</p>
-          </div>
-        )}
-      </DetailBlock>
     </div>
   );
 }
@@ -281,14 +245,6 @@ function ProjectModal({ project, onClose }) {
           </DetailBlock>
         </div>
 
-        {project.impact && (
-          <div className="mb-6">
-            <DetailBlock icon={FiTrendingUp} title="Impact">
-              <p>{project.impact}</p>
-            </DetailBlock>
-          </div>
-        )}
-
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-6">
           <DetailBlock icon={FiCheckCircle} title="Working">
             <ul className="space-y-2">
@@ -312,23 +268,27 @@ function ProjectModal({ project, onClose }) {
           </DetailBlock>
         </div>
 
-        <DetailBlock icon={FiCode} title="Tech Stack">
-          <div className="flex flex-wrap gap-2">
-            {project.techStack.map((tech) => (
-              <span key={tech} className="skill-tag">
-                {tech}
-              </span>
-            ))}
-          </div>
-        </DetailBlock>
-
-        <div className="mt-6 mb-6">
-          <DetailBlock icon={FiImage} title="Proof Checklist">
-            <p>{project.proof.summary}</p>
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-6">
+          <DetailBlock icon={FiCode} title="Tech Stack">
+            <div className="flex flex-wrap gap-2">
+              {project.techStack.map((tech) => (
+                <span key={tech} className="skill-tag">
+                  {tech}
+                </span>
+              ))}
+            </div>
           </DetailBlock>
+
+          {project.impact && (
+            <DetailBlock icon={FiTrendingUp} title="Impact">
+              <p>{project.impact}</p>
+            </DetailBlock>
+          )}
         </div>
 
-        <ProofMedia project={project} />
+        <div className="mb-6 mt-6">
+          <ProjectProof projectDir={project.proof?.projectDir} projectTitle={project.shortTitle} />
+        </div>
 
         <div className="mt-8 flex flex-col sm:flex-row gap-4">
           {showCodeAvailability &&

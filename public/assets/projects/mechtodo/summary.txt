@@ -1,0 +1,49 @@
+PROJECT: MechTodo (Structured Task Management System)
+
+TYPE: Mobile Application / Productivity / Task Management
+
+DESCRIPTION:
+MechTodo is a structured task management application designed to organize personal workflows through categorized task states, intelligent reminders, and flexible scheduling logic. The system goes beyond basic task tracking by introducing workflow-driven task states and rule-based reminder configurations.
+
+FEATURES:
+- Task lifecycle management (create, edit, delete, complete)
+- Structured categories:
+  All, Daily, Projects, In Progress, Completed, Planned, On Hold, Overdue
+- Rich task configuration:
+  - Title, description, project grouping
+  - Priority levels (Low, Medium, High)
+  - Task types (One-time, Daily, Project-based)
+  - Status tracking (Planned → In Progress → Completed → On Hold)
+- Daily summary reminder:
+  - Automatically generates a consolidated reminder of pending tasks
+  - Displays count of tasks (e.g., "You have 5 tasks today")
+  - Helps users quickly assess daily workload
+  - Configurable default reminder time by user
+
+SMART SCHEDULING:
+- Daily tasks with time-based reminders
+- Weekly recurrence with day selection
+- Monthly recurrence with date selection
+- Project tasks with deadlines
+
+REMINDER SYSTEM:
+- Custom in-app reminder activity
+- Smart notifications with snooze support
+- Context-aware scheduling based on task type
+
+WORKFLOW DESIGN:
+Task Creation → Rule-based Configuration → Local Storage → Reminder Engine → User Interaction
+
+DATA HANDLING:
+- Offline-first architecture
+- Local storage for fast access and reliability
+- Real-time updates within the app
+
+USE CASE:
+- Personal productivity management
+- Daily routine tracking
+- Project task organization
+- Structured workflow planning
+
+STATUS:
+Fully functional app used for daily productivity with complete assets including code, testing, and UI visuals.

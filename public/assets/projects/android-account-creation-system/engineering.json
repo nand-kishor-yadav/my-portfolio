@@ -1,0 +1,93 @@
+{
+    "Project Name": [
+        "Android Account Creation System"
+    ],
+    "Category": [
+        "Mobile Automation System"
+    ],
+    "Project Type": [
+        "Distributed Device Automation"
+    ],
+    "Description": [
+        "A scalable mobile automation platform for provisioning user accounts using real Android devices with centralized orchestration and monitoring."
+    ],
+    "Environment": [
+        "Physical Android devices (Pixel series)",
+        "Custom Android distributions (GrapheneOS, LineageOS)"
+    ],
+    "Execution Mode": [
+        "Parallel multi-device execution"
+    ],
+    "Architecture": [
+        "Centralized control layer with web-based dashboard",
+        "Distributed execution layer across connected Android devices",
+        "ADB and Appium-based communication bridge"
+    ],
+    "Data Flow": [
+        "User data ingestion from dashboard",
+        "Task scheduling and distribution to connected devices",
+        "Execution via Appium and UIAutomator",
+        "Result aggregation and logging (local + server)"
+    ],
+    "Core Features": [
+        "Automated account provisioning via native mobile applications",
+        "Multi-application workflow handling (Gmail, Play Store)",
+        "High-throughput parallel execution across multiple devices",
+        "Centralized orchestration and monitoring dashboard",
+        "Real-time logging and execution tracking",
+        "Continuous bulk processing via loop-based execution"
+    ],
+    "Automation Engine": [
+        "Dynamic UI detection with multi-layer fallback selectors",
+        "Probabilistic interaction model (gesture variation, randomized input)",
+        "Configurable retry mechanism (up to 10 attempts per session)",
+        "Session lifecycle management with automated recovery",
+        "Crash detection and workflow continuation"
+    ],
+    "Device Management": [
+        "Physical device orchestration",
+        "Scalable to 100+ concurrent devices",
+        "Session isolation and device state reset strategies",
+        "Device-level variability handling for execution consistency"
+    ],
+    "Performance Metrics": [
+        "500+ automated execution cycles tested",
+        "Average execution time: 5–6 minutes per account",
+        "Success rate (controlled conditions): 90%+",
+        "Cross-device success rate: 50–70%",
+        "Parallel execution capacity: 100+ devices"
+    ],
+    "Resilience Features": [
+        "Multi-path UI navigation strategies",
+        "Fallback execution flows for variable app states",
+        "Retry handling for conditional verification steps",
+        "Automated crash recovery mechanisms",
+        "Long-running session stability support"
+    ],
+    "Challenges": [
+        "Adapting to dynamic UI changes across app versions",
+        "Maintaining stability across long-running distributed executions",
+        "Handling inconsistent application states and edge cases",
+        "Designing extensible fallback systems to minimize maintenance overhead"
+    ],
+    "Testing": [
+        "Real-device execution validation",
+        "500+ full workflow test runs",
+        "End-to-end verification via logs and output validation"
+    ],
+    "Artifacts": [
+        "Execution logs",
+        "Testing screenshots",
+        "Workflow recordings"
+    ],
+    "Tech Stack": [
+        "Java",
+        "Appium",
+        "ADB",
+        "UIAutomator",
+        "Android"
+    ],
+    "Code Visibility": [
+        "Private"
+    ]
+}

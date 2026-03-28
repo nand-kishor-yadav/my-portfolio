@@ -1,0 +1,100 @@
+{
+    "Project Name": [
+        "Instagram Growth Dashboard"
+    ],
+    "Slug": [
+        "instagram-growth-dashboard"
+    ],
+    "Project Type": [
+        "Software",
+        "Analytics",
+        "Automation"
+    ],
+    "Purpose": [
+        "Growth hacking",
+        "Learning"
+    ],
+    "Problem": [
+        "Manual tracking of Instagram account growth and engagement lacks real-time insights and scalability across multiple accounts"
+    ],
+    "Solution": [
+        "A real-time analytics system that automates data collection, computes engagement metrics, and provides dashboard-based insights with comparison and alerting capabilities"
+    ],
+    "Architecture": [
+        "Hybrid data collection system using unofficial APIs with proxy rotation and scraping fallback",
+        "Data is processed and stored for time-series analytics",
+        "Results are visualized through a web dashboard"
+    ],
+    "Pipeline": [
+        "Account input",
+        "API or scraper layer",
+        "Proxy rotation",
+        "Data collection at 5-minute intervals",
+        "Data processing",
+        "Database storage",
+        "Analytics computation",
+        "Dashboard visualization"
+    ],
+    "System Type": [
+        "Real-time analytics system"
+    ],
+    "Core Features": [
+        "Followers, following, and post tracking",
+        "Likes and comments per post monitoring",
+        "Engagement rate calculation",
+        "Multi-account tracking",
+        "Time-series data storage"
+    ],
+    "Advanced Features": [
+        "5-minute interval automated data collection",
+        "Proxy rotation for reliability",
+        "API and scraping fallback system",
+        "Cross-account comparison",
+        "Alert system for activity changes",
+        "Data export functionality"
+    ],
+    "Tech Stack": [
+        "Web application",
+        "Unofficial API integration",
+        "Web scraping",
+        "Proxy rotation",
+        "Database system"
+    ],
+    "Engineering Concepts": [
+        "Time-series analytics",
+        "Automation pipelines",
+        "Scalable data collection",
+        "Dashboard visualization",
+        "Growth analytics"
+    ],
+    "Performance": [
+        "Updates every 5 minutes",
+        "Supports tracking multiple accounts simultaneously",
+        "Stable operation using proxy rotation and fallback mechanisms"
+    ],
+    "Challenges": [
+        "Maintaining reliable data collection with API limitations",
+        "Handling rate limits and access restrictions",
+        "Ensuring data consistency across multiple accounts",
+        "Managing proxy rotation and fallback logic"
+    ],
+    "Applications": [
+        "Social media growth analytics",
+        "Influencer performance tracking",
+        "Marketing analytics tools",
+        "Growth hacking platforms"
+    ],
+    "Learning Focus": [
+        "Real-time data systems",
+        "Time-series data processing",
+        "Automation with fallback strategies",
+        "Dashboard-based analytics",
+        "Scalable tracking systems"
+    ],
+    "Outcome": [
+        "Demonstrates the ability to design and build real-time analytics platforms with automated data pipelines and intelligent monitoring features"
+    ],
+    "Code Visibility": [
+        "Private"
+    ]
+}

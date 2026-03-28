@@ -1,0 +1,26 @@
+Custom High-Torque Smart Servo Motor (DIY Servo System)
+
+This project is a custom-engineered smart servo motor designed as a cost-effective and high-torque alternative to commercial servo units. The system maintains standard 3-pin servo compatibility while internally using a fully custom control and power architecture.
+
+At its core, the system uses a DC motor combined with a potentiometer-based feedback mechanism to enable closed-loop position control. A custom controller circuit processes incoming PWM signals (standard servo input from Arduino or similar controllers) and adjusts motor movement to achieve the desired angle.
+
+The control system is implemented using analog circuitry, including LM358 operational amplifiers for signal processing and control logic, along with a MOSFET-based power stage to drive the motor efficiently. This allows the system to handle higher torque requirements compared to standard low-cost servos.
+
+A precision gearbox (metal-based) is integrated to amplify torque output and ensure mechanical durability. The design targets significantly higher torque (~30 kg-cm range) while maintaining drop-in compatibility with existing servo-based systems.
+
+Key workflow:
+PWM Input → Control Circuit → Feedback Comparison → MOSFET Drive → Motor Movement → Position Feedback
+
+The system was prototyped using a custom PCB and tested with real control signals. It successfully demonstrated angle-based control similar to conventional servos, validating both the feedback loop and power stage design.
+
+This project focuses on:
+- Closed-loop control systems
+- Analog signal processing
+- Power electronics (MOSFET-based motor driving)
+- Embedded-compatible actuator design
+- Mechanical torque optimization
+- Cost-efficient hardware engineering
+
+Assets include PCB design files, circuit schematics, and testing visuals.
+
+This project demonstrates deep understanding of actuator systems, bridging electronics, control theory, and mechanical design into a single integrated solution.

@@ -1,6 +1,3 @@
-const buildAssetPaths = (slug, folder, files) =>
-  files.map((file) => `/assets/projects/${slug}/${folder}/${file}`);
-
 const createSupportingProject = ({
   slug,
   title,
@@ -15,6 +12,7 @@ const createSupportingProject = ({
   challenges,
   impact,
   role,
+  proof,
   codeAvailability,
 }) => ({
   slug,
@@ -31,15 +29,13 @@ const createSupportingProject = ({
   impact,
   role,
   proof: {
-    summary: 'Proof assets can be added later through the shared project proof workflow.',
-    imageFiles: [],
-    videoFiles: [],
+    projectDir: slug,
+    ...proof,
   },
   codeAvailability: {
     show: true,
     label: 'Code available on request',
     note: 'Public code is not attached yet for this supporting project.',
-    // TODO: Add GitHub repo link or "Available on request"
     href: '',
     ...codeAvailability,
   },
@@ -53,7 +49,7 @@ export const projects = [
     category: 'Embedded Systems / IoT / Robotics',
     tags: ['Embedded', 'IoT', 'Automation', 'Power Systems', 'Robotics'],
     overview:
-      'A centralized solar panel cleaning system designed to automate maintenance across multiple panels using a master-controller architecture with sequential power-optimized operation.',
+      'An automated solar panel cleaning system that uses rail-based motion, brush cleaning, and water spray to maintain panel efficiency across multiple panels with centralized control.',
     problem:
       'Dust accumulation significantly reduces solar panel efficiency, while manual cleaning is labor-intensive and inefficient for multi-panel installations.',
     architecture:
@@ -88,10 +84,7 @@ export const projects = [
     role:
       'Designed the complete system architecture including control logic, power distribution, actuator integration, and PCB-level implementation for a multi-panel automated cleaning system.',
     proof: {
-      summary:
-        'Add PCB images, wiring layout, panel setup photos, cleaning operation videos, and system test results.',
-      imageFiles: [],
-      videoFiles: [],
+      projectDir: 'solar-cleaning-system',
     },
     codeAvailability: {
       show: true,
@@ -125,7 +118,7 @@ export const projects = [
     working: [
       'Accepts a standard 3-pin servo interface for drop-in integration.',
       'Processes PWM control signals and drives a custom power stage.',
-      'Delivers 30 kg-cm torque at 12 V with a reported maximum current draw of 1 A.',
+      'Achieves closed-loop angle control with potentiometer feedback and a custom analog control circuit.',
       'Uses a precision metal gearbox for durability and torque transfer.',
       'Targets roughly 3x torque improvement at significantly lower cost than comparable units.',
     ],
@@ -134,20 +127,18 @@ export const projects = [
       'Maintaining standard servo compatibility while changing the internal drive architecture.',
       'Co-optimizing embedded control, mechanical transmission, and cost.',
     ],
-    impact: 'Showcases full-stack hardware engineering from power electronics to mechanical design achieving high-torque efficient actuation.',
+    impact:
+      'Showcases full-stack hardware engineering from power electronics to mechanical design achieving high-torque efficient actuation.',
     role:
       'Owned the servo concept, power-stage direction, control compatibility goals, and the integration between electronics and mechanical design.',
     proof: {
-      summary:
-        'Add gearbox photos, PCB renders, motor-driver closeups, test-bench images, and a torque demonstration video.',
-      imageFiles: [],
-      videoFiles: [],
+      projectDir: 'custom-servo',
     },
     codeAvailability: {
       show: true,
       label: 'Code available on request',
-      note: 'Firmware and hardware files remain private, but proof assets and technical discussion can be shared.',
-      // TODO: Add GitHub repo link or "Available on request"
+      note:
+        'Firmware and hardware files remain private, but proof assets and technical discussion can be shared.',
       href: '',
     },
   },
@@ -158,7 +149,7 @@ export const projects = [
     category: 'IoT / Embedded Systems',
     tags: ['Embedded', 'IoT', 'Hardware'],
     overview:
-      'A field-ready monitoring platform that captures solar and environmental data, presents it locally, and pushes it to a dashboard for historical analysis and operational alerts.',
+      'A field-ready telemetry platform that captures environmental and electrical data from solar systems and delivers real-time monitoring, historical analytics, and fallback reporting.',
     problem:
       'Solar plants need more than panel voltage readings. Operators also need visibility into environmental conditions, inverter efficiency, dust impact, and daily performance trends to detect issues early.',
     architecture:
@@ -177,7 +168,7 @@ export const projects = [
       'Measures dust, temperature, humidity, air density, solar irradiance, wind speed, and wind direction.',
       'Tracks solar voltage, current, power, and inverter-side metrics for comparative efficiency analysis.',
       'Shows real-time readings on an LCD for on-site visibility.',
-      'Sends daily SMS summaries through GSM for remote monitoring.',
+      'Transmits telemetry through WiFi with GSM fallback for reporting and remote visibility.',
       'Logs synchronized data to a dashboard with historical charts and CSV export.',
       'Generates low-efficiency and high-dust alerts for maintenance decisions.',
     ],
@@ -186,20 +177,17 @@ export const projects = [
       'Maintaining reliable field telemetry through GSM connectivity constraints.',
       'Presenting both live and historical analytics in a way that supports operational decisions.',
     ],
-    impact: 'Represents a complete IoT-based energy monitoring system with real-time analytics, remote communication, and efficiency optimization.',
+    impact:
+      'Represents a complete IoT-based energy monitoring system with real-time analytics, remote communication, and efficiency optimization.',
     role:
       'Designed the embedded monitoring flow, telemetry logic, dashboard integration strategy, and analytics-oriented reporting requirements.',
     proof: {
-      summary:
-        'Add hardware photos, installed field images, LCD screenshots, dashboard screenshots, and a short end-to-end demo video.',
-      imageFiles: [],
-      videoFiles: [],
+      projectDir: 'solar-monitoring',
     },
     codeAvailability: {
       show: true,
       label: 'Code available on request',
       note: 'Private firmware and dashboard code are not exposed publicly.',
-      // TODO: Add GitHub repo link or "Available on request"
       href: '',
     },
   },
@@ -210,45 +198,44 @@ export const projects = [
     category: 'Medical Electronics / Signal Conditioning',
     tags: ['Embedded', 'Hardware', 'Analog'],
     overview:
-      'A low-noise analog front-end for acquiring biological signals such as ECG, EEG, and EMG with adjustable gain and filtering.',
+      'A custom EMG bio-amplifier that captures, amplifies, and filters muscle signals before passing them to an embedded controller for actuator control.',
     problem:
-      'Raw bio-signals are extremely small and noisy, which makes them difficult to observe or process without carefully designed amplification and filtering stages.',
+      'Raw EMG signals are low-amplitude and noisy, making them difficult to use directly for real-time control without analog conditioning and filtering.',
     architecture:
-      'The system uses an analog signal-conditioning chain focused on low-noise amplification, tunable gain, and filtering controls before exposing the conditioned output for downstream monitoring or USB-based capture.',
+      'The system uses an LM358-based analog front-end with amplification and low-pass filtering, followed by Arduino-side signal reading and threshold-based actuation.',
     techStack: [
+      'LM358',
       'Analog Electronics',
       'PCB Design',
-      'Signal Processing',
-      'Adjustable Gain Stages',
+      'EMG Signal Conditioning',
       'Filter Design',
-      'USB Data Output',
+      'Arduino',
+      'Servo Control',
     ],
     working: [
-      'Captures low-amplitude biological signals from sensor inputs.',
-      'Amplifies signals using a low-noise analog stage.',
-      'Provides adjustable gain for different signal strengths and use cases.',
-      'Applies filter controls to improve signal clarity before output.',
-      'Supports USB-connected data output for visualization or analysis.',
+      'Captures EMG signals through electrode inputs.',
+      'Amplifies low-level muscle signals using an analog gain stage.',
+      'Filters high-frequency noise to stabilize the control signal.',
+      'Feeds the conditioned signal to an Arduino for real-time processing.',
+      'Demonstrates servo actuation based on live muscle activity.',
     ],
     challenges: [
       'Reducing noise while preserving weak biological signal integrity.',
       'Balancing gain and filtering so the output remains stable and usable across signal types.',
       'Translating analog design decisions into a practical PCB implementation.',
     ],
-    impact: 'Demonstrates precision analog signal acquisition and amplification for biomedical applications.',
+    impact:
+      'Demonstrates precision analog signal acquisition and amplification for biomedical applications.',
     role:
       'Led the analog signal-chain concept, amplification and filtering strategy, and proof-oriented hardware packaging.',
     proof: {
-      summary:
-        'Add board photos, oscilloscope captures, schematic or PCB screenshots, and a demo showing live waveform acquisition.',
-      imageFiles: [],
-      videoFiles: [],
+      projectDir: 'bio-amplifier',
     },
     codeAvailability: {
       show: false,
       label: 'Code available on request',
-      note: 'This project is primarily hardware-focused; any supporting firmware or analysis scripts can be shared on request.',
-      // TODO: Add GitHub repo link or "Available on request"
+      note:
+        'This project is primarily hardware-focused; any supporting firmware or analysis scripts can be shared on request.',
       href: '',
     },
   },
@@ -263,19 +250,20 @@ export const projects = [
     problem:
       'Conventional robotic control methods can feel unnatural for human interaction, so this project explores muscle-driven control.',
     architecture:
-      'Includes signal amplification, filtering (analog front-end), and ADC conversion before embedded interpretation.',
-    techStack: ['Python', 'Embedded C', 'Arduino', 'EMG Sensors'],
+      'A bio-signal control chain converts EMG input into real-time servo motion through custom amplification, Arduino-side processing, and single-axis actuation.',
+    techStack: ['Arduino', 'LM358 EMG Amplifier', 'EMG Electrodes', 'Servo Motor'],
     working: [
-      'Real-time EMG signal processing',
-      'Precise motor control',
-      'Adjustable sensitivity settings',
-      'Wireless connectivity option',
+      'Real-time EMG signal acquisition from arm muscles',
+      'Basic filtering and signal conditioning in the control loop',
+      'Signal-based angle mapping for servo movement',
+      'Single-DOF robotic motion driven by muscle activation',
     ],
     challenges: [
       'Interpreting noisy EMG input reliably enough for actuation.',
       'Maintaining smooth control while tuning sensitivity and signal response.',
     ],
-    impact: 'Demonstrates real-time bio-signal acquisition and its direct application in embedded robotic control systems.',
+    impact:
+      'Demonstrates real-time bio-signal acquisition and its direct application in embedded robotic control systems.',
     role: 'Integrated EMG sensing, control logic, and robotic actuation into one working system.',
   }),
   createSupportingProject({
@@ -285,24 +273,26 @@ export const projects = [
     category: 'AI Systems / Software',
     tags: ['AI Systems', 'Assistant', 'Automation'],
     overview:
-      'A modular AI assistant system combining conversational intelligence, task execution, and workflow automation.',
+      'A local-first autonomous AI agent runtime that combines planning, tool use, task tracking, memory, critique, and a live browser control interface.',
     problem:
-      'Generic assistants do not always match personalized workflows or domain-specific response behavior.',
+      'Most assistant systems stop at text responses and do not maintain structured task state, retries, memory, or operational visibility across sessions.',
     architecture:
-      'A trained conversational model is paired with application logic for search assistance and workflow-driven interactions.',
-    techStack: ['Python', 'NLP', 'TensorFlow', 'React.js'],
+      'SAM routes requests through intent classification, planning, tool routing, task execution, critique, replanning, memory binding, and WebUI feedback.',
+    techStack: ['Python', 'HTTP API', 'WebUI', 'Task Engine', 'Planner', 'Memory System'],
     working: [
-      'Own trained model for personalized assistance',
-      'Real-time search assistance',
-      'Social media handling workflows',
-      'Context-aware responses',
+      'Accepts requests through WebUI, CLI, desktop launcher, or HTTP API',
+      'Builds context using conversation, memory, identity, and learning signals',
+      'Generates structured plans and routes work through tool execution pipelines',
+      'Tracks tasks, retries, failures, and live runtime state through a browser control surface',
     ],
     challenges: [
-      'Improving response quality while keeping the assistant useful in real interactions.',
-      'Combining model behavior with task-oriented software flows.',
+      'Designing an agent runtime instead of a simple chat wrapper.',
+      'Combining planning, memory, execution, and observability into one coordinated system.',
     ],
-    impact: 'Showcases the design of a modular AI assistant system combining conversational intelligence with task-oriented workflows.',
-    role: 'Built the assistant concept, model behavior, and workflow-side integration.',
+    impact:
+      'Demonstrates a stateful autonomous agent system with planning, background task execution, memory, and live operational control.',
+    role:
+      'Built the local-first runtime, orchestration layer, WebUI, task pipeline, memory system, and control surfaces for the autonomous agent.',
   }),
   createSupportingProject({
     slug: 'android-automator',
@@ -311,12 +301,12 @@ export const projects = [
     category: 'Automation',
     tags: ['Automation', 'Android', 'Software'],
     overview:
-      'An Instagram automation system for managing large-scale account activity and engagement workflows.',
+      'A configurable mobile automation engine for large-scale social media workflows across real Android devices.',
     problem:
       'Manual execution of repetitive social workflows is slow and difficult to scale across many accounts.',
     architecture:
-      'A Java-led automation stack coordinates Appium and Android SDK execution flows with configurable actions and account-handling logic.',
-    techStack: ['Java', 'Appium', 'Python', 'Android SDK'],
+      'A centralized dashboard coordinates distributed Appium, ADB, and UIAutomator execution with reusable action abstractions, fallback UI detection, and large-scale parallel device orchestration.',
+    techStack: ['Java', 'Appium', 'ADB', 'UIAutomator', 'OCR / Image Matching'],
     working: [
       'Automated likes',
       'Smart follow/unfollow',
@@ -334,8 +324,10 @@ export const projects = [
       'Scaling account activity while preserving workflow control.',
       'Keeping automation behavior configurable enough for different campaign patterns.',
     ],
-    impact: 'Represents large-scale mobile automation with real-device execution, workflow orchestration, and system-level control.',
-    role: 'Built the automation workflows and coordinated mobile execution for high-volume account handling.',
+    impact:
+      'Represents large-scale mobile automation with real-device execution, workflow orchestration, and system-level control.',
+    role:
+      'Built the automation workflows and coordinated mobile execution for high-volume account handling.',
   }),
   createSupportingProject({
     slug: 'mechtodo',
@@ -344,12 +336,12 @@ export const projects = [
     category: 'Android Application',
     tags: ['Android', 'Software', 'Productivity'],
     overview:
-      'A task management Android app with categorized workflows, reminders, and progress tracking.',
+      'A structured Android productivity app with workflow-driven task states, recurrence rules, and a custom reminder engine.',
     problem:
       'Task planning, execution, and overdue follow-up are often fragmented across multiple tools.',
     architecture:
-      'An Android app built around categorized task flows, Room persistence, and reminder scheduling through notifications.',
-    techStack: ['Java / Kotlin', 'Android SDK', 'Room Database', 'Notification Manager', 'Material UI'],
+      'An offline-first mobile system with local storage, rule-based scheduling, task lifecycle management, and smart reminders for recurring and project-based workflows.',
+    techStack: ['Android SDK', 'Java / Kotlin', 'Local Database', 'Reminder Engine', 'Notification Manager'],
     working: [
       'Category-based task organization',
       'Custom notification scheduling',
@@ -361,7 +353,8 @@ export const projects = [
       'Keeping task-state transitions clear across categories.',
       'Making reminder behavior reliable enough for daily use.',
     ],
-    impact: 'Highlights structured task management system design with real-world usability and state-driven workflows.',
+    impact:
+      'Highlights structured task management system design with real-world usability and state-driven workflows.',
     role: 'Designed the app workflow, persistence model, and reminder-oriented user experience.',
   }),
   createSupportingProject({
@@ -371,12 +364,12 @@ export const projects = [
     category: 'Web Application / Analytics',
     tags: ['Analytics', 'Web', 'Software'],
     overview:
-      'A dashboard for tracking Instagram profile growth, engagement trends, and report-ready performance metrics.',
+      'A real-time analytics dashboard that tracks Instagram growth, engagement, and multi-account performance using automated data collection pipelines.',
     problem:
       'Operators need one place to review growth trends, engagement shifts, and account performance over time.',
     architecture:
-      'A web analytics dashboard combines API-connected or script-fed data sources with charting and report-generation features.',
-    techStack: ['PHP', 'Automation Scripts', 'REST API', 'React.js', 'Chart.js', 'Database'],
+      'A hybrid API and scraping pipeline collects account data at fixed intervals, stores it for time-series analytics, and visualizes engagement trends through a web dashboard.',
+    techStack: ['Web Application', 'Unofficial API Integration', 'Web Scraping', 'Proxy Rotation', 'Database'],
     working: [
       'Follower growth visualization',
       'Engagement rate calculation',
@@ -388,7 +381,8 @@ export const projects = [
       'Turning raw platform data into useful operator-facing analytics.',
       'Combining monitoring, alerts, and reports in one workflow.',
     ],
-    impact: 'Demonstrates the ability to transform raw platform data into actionable analytics and reporting systems.',
+    impact:
+      'Demonstrates the ability to transform raw platform data into actionable analytics and reporting systems.',
     role: 'Built the dashboard concept and reporting-oriented analytics experience.',
   }),
   createSupportingProject({
@@ -398,25 +392,32 @@ export const projects = [
     category: 'Automation / Web Scraping',
     tags: ['Automation', 'Scraping', 'Software'],
     overview:
-      'A data extraction tool for collecting structured business intelligence from map-based search results.',
+      'A production-grade automation system for extracting structured business intelligence from Google Maps search results at scale.',
     problem:
       'Collecting business lead data manually from map search results is repetitive and time-intensive.',
     architecture:
       'A Selenium-based crawler uses multithreading, proxy rotation, and captcha-aware handling to collect structured business records.',
-    techStack: ['Java', 'Selenium', 'Multithreading', 'Proxy Rotation', 'Captcha Handling', 'Excel (XLSX Export)'],
+    techStack: [
+      'Java',
+      'Selenium',
+      'Multithreading',
+      'Proxy Rotation',
+      'Captcha Handling',
+      'Excel (XLSX Export)',
+    ],
     working: [
-      'Query-based data extraction',
-      'Email and website extraction',
-      'Multi-thread processing',
-      'Proxy rotation support',
-      'Captcha handling logic',
-      'Automated Excel export',
+      'Bulk and single-query business extraction',
+      'Collection of contact, location, social, and review metadata',
+      'Multi-threaded execution with retry and error tolerance',
+      'Proxy rotation and captcha-aware handling',
+      'Structured Excel export for lead generation workflows',
     ],
     challenges: [
       'Managing extraction throughput without compromising reliability.',
       'Handling proxy and captcha interruptions during scraping.',
     ],
-    impact: 'Shows expertise in building scalable data extraction pipelines with automation, concurrency, and structured output generation.',
+    impact:
+      'Shows expertise in building scalable data extraction pipelines with automation, concurrency, and structured output generation.',
     role: 'Built the scraping workflow and export pipeline for query-based business data collection.',
   }),
   createSupportingProject({
@@ -426,12 +427,12 @@ export const projects = [
     category: 'Automation',
     tags: ['Automation', 'Selenium', 'Software'],
     overview:
-      'An automation framework for account registration and support-ticket submission using predefined workflows and templates.',
+      'An input-driven browser automation framework that handles account registration, login, navigation, and support-ticket submission across multiple external platforms.',
     problem:
       'Repeated registration and ticket submission tasks are inefficient and error-prone when handled manually.',
     architecture:
-      'A Selenium-driven framework runs queued account and ticket workflows with retry handling and captcha-aware logic.',
-    techStack: ['Java', 'Selenium', 'Multi-threading', 'Captcha Handling', 'Queue System'],
+      'A Selenium-based execution pipeline reads URLs and user datasets from structured files, detects forms dynamically, completes end-to-end workflows, and logs credentials and ticket activity.',
+    techStack: ['Java', 'Selenium', 'WebDriver', 'Structured Input Files', 'Execution Logging'],
     working: [
       'Automated account registration',
       'Structured ticket submission',
@@ -443,7 +444,8 @@ export const projects = [
       'Coordinating retries across repetitive task flows.',
       'Keeping the system resilient when verification steps fail.',
     ],
-    impact: 'Demonstrates scalable workflow automation using queue-based execution, fault-tolerant design, and structured task orchestration.',
+    impact:
+      'Demonstrates scalable workflow automation using queue-based execution, fault-tolerant design, and structured task orchestration.',
     role: 'Designed the queue-driven framework for large-volume registration and submission tasks.',
   }),
   createSupportingProject({
@@ -453,12 +455,21 @@ export const projects = [
     category: 'Android + Web Application',
     tags: ['Android', 'Tracking', 'IoT'],
     overview:
-      'A multi-layer anti-theft system combining GPS, BLE Mesh, and UWB-based proximity recovery mechanisms.',
+      'A multi-layer Android anti-theft and recovery platform that combines fallback tracking methods, remote control, and dashboard-based device monitoring.',
     problem:
       'Device recovery often needs more than basic location visibility to improve response and deterrence.',
     architecture:
-      'An Android client coordinates remote control actions and telemetry, while a web dashboard surfaces GPS and fallback tracking insights.',
-    techStack: ['Android SDK', 'Java / Kotlin', 'REST API', 'Web Dashboard', 'GPS', 'BLE Mesh', 'UWB', 'Cloud Database'],
+      'A hybrid mobile and backend architecture combines background services, multi-channel communication, fallback decision logic, and a web dashboard for remote tracking and recovery actions.',
+    techStack: [
+      'Android SDK',
+      'Java / Kotlin',
+      'REST API',
+      'Web Dashboard',
+      'GPS',
+      'BLE Mesh',
+      'UWB',
+      'Cloud Database',
+    ],
     working: [
       'Remote Lost Mode activation',
       'Fake shutdown simulation',
@@ -473,8 +484,10 @@ export const projects = [
       'Combining multiple tracking mechanisms into one coherent recovery flow.',
       'Balancing stealth controls with usability and observability.',
     ],
-    impact: 'Demonstrates multi-layer device tracking system design combining GPS, BLE Mesh, and UWB-based recovery mechanisms.',
-    role: 'Defined the anti-theft product flow and integrated tracking behavior with remote device actions.',
+    impact:
+      'Demonstrates multi-layer device tracking system design combining GPS, BLE Mesh, and UWB-based recovery mechanisms.',
+    role:
+      'Defined the anti-theft product flow and integrated tracking behavior with remote device actions.',
   }),
   createSupportingProject({
     slug: 'android-account-creation-system',
@@ -483,12 +496,12 @@ export const projects = [
     category: 'Device Automation',
     tags: ['Automation', 'Android', 'Devices'],
     overview:
-      'A Windows-based system that automates account creation on real Android devices using ADB and custom OS environments.',
+      'A distributed mobile automation platform that provisions accounts on real Android devices through centralized orchestration, dashboard-driven control, and large-scale parallel execution.',
     problem:
       'Some onboarding flows require device-level execution that browser-only automation cannot cover reliably.',
     architecture:
-      'A desktop controller manages real-device automation through ADB, custom Android environments, IP rotation, and device-profile handling.',
-    techStack: ['Java', 'Windows Application', 'ADB', 'Android Automation', 'Custom OS (GrapheneOS / LineageOS)', 'IP Rotation', 'Device Spoofing'],
+      'A centralized control layer distributes workflows to connected Android devices, where Appium and UIAutomator execute real-device account creation flows using ADB communication bridges.',
+    techStack: ['Java', 'Appium', 'ADB', 'UIAutomator', 'GrapheneOS / LineageOS', 'Android Automation'],
     working: [
       'Real-device automation',
       'Dynamic IP rotation',
@@ -501,7 +514,8 @@ export const projects = [
       'Coordinating real-device execution across controlled mobile environments.',
       'Tracking failures clearly enough for repeatable automation runs.',
     ],
-    impact: 'Highlights real-device automation capabilities with ADB control, environment manipulation, and scalable execution workflows.',
+    impact:
+      'Highlights real-device automation capabilities with ADB control, environment manipulation, and scalable execution workflows.',
     role: 'Built the device automation workflow for account provisioning on real Android hardware.',
   }),
   createSupportingProject({
@@ -511,12 +525,12 @@ export const projects = [
     category: 'Automation / Mobile Automation',
     tags: ['Automation', 'Mobile', 'Devices'],
     overview:
-      'A real-device automation system for provisioning social media accounts with controlled network and device behavior.',
+      'A dependency-driven mobile automation platform that provisions social media accounts through multi-stage workflows across Gmail and Instagram on real Android devices.',
     problem:
       'Bulk social account provisioning requires more control and repeatability than manual execution provides.',
     architecture:
-      'A Windows application manages Android execution, IP rotation, spoofing controls, and provisioning workflow steps.',
-    techStack: ['Java', 'Windows Application', 'ADB', 'Android Automation', 'Custom OS (GrapheneOS / LineageOS)', 'IP Rotation', 'Device Spoofing'],
+      'A centralized dashboard controls conditional workflow execution, cross-application context switching, OTP retrieval, and session-level orchestration across Appium-driven Android devices.',
+    techStack: ['Java', 'Appium', 'ADB', 'UIAutomator', 'GrapheneOS / LineageOS', 'Android Automation'],
     working: [
       'Bulk account provisioning',
       'IP rotation management',
@@ -530,8 +544,10 @@ export const projects = [
       'Keeping bulk provisioning workflows stable across device and network changes.',
       'Reducing friction in post-creation setup steps such as 2FA.',
     ],
-    impact: 'Represents controlled large-scale account provisioning using device-level automation and network management strategies.',
-    role: 'Implemented the provisioning workflow and supporting controls for device-based social account creation.',
+    impact:
+      'Represents controlled large-scale account provisioning using device-level automation and network management strategies.',
+    role:
+      'Implemented the provisioning workflow and supporting controls for device-based social account creation.',
   }),
   createSupportingProject({
     slug: 'custom-3d-printer',
@@ -540,24 +556,33 @@ export const projects = [
     category: 'Electronics',
     tags: ['Embedded', 'Hardware', 'Mechanical'],
     overview:
-      'A custom-built 3D printer focused on precision, control, and machine-level feature integration.',
+      'A fully functional custom-built Cartesian 3D printer designed from scratch to combine mechanical design, embedded electronics, firmware configuration, and calibration into one integrated machine.',
     problem:
       'Off-the-shelf desktop printers do not always provide the control features needed for custom experimentation.',
     architecture:
-      'A custom printer stack built around Arduino-class control, PCB-backed electronics, and machine features for leveling, connectivity, and user interaction.',
-    techStack: ['Arduino', 'C++', '3D Printing', 'PCB Design'],
+      'A large-format Cartesian printer uses an aluminum extrusion frame, belt-driven XY motion, lead screw Z motion, Arduino Mega with RAMPS 1.4, and customized Marlin firmware.',
+    techStack: ['Arduino Mega', 'RAMPS 1.4', 'Marlin Firmware', 'A4988 Drivers', 'NEMA 17', '3D Printing'],
     working: [
-      'High precision printing',
-      'Auto-leveling',
-      'WiFi connectivity',
-      'Touchscreen interface',
+      'Executes Cartesian motion control with belt-driven XY and lead screw Z movement',
+      'Runs custom-calibrated Marlin firmware for G-code execution',
+      'Uses a Bowden extrusion setup to reduce moving mass',
+      'Produces validated test prints including calibration cubes',
     ],
     challenges: [
       'Balancing mechanical precision with practical control hardware.',
       'Integrating usability features without overcomplicating the build.',
     ],
-    impact: 'Demonstrates end-to-end machine design including motion control, embedded systems, and hardware-software integration.',
-    role: 'Designed and assembled the printer system, including control electronics and feature integration.',
+    impact:
+      'Demonstrates end-to-end machine design including motion control, embedded systems, and hardware-software integration.',
+    role:
+      'Designed and assembled the printer system, including control electronics and feature integration.',
+    codeAvailability: {
+      show: true,
+      label: 'Open-source firmware reference',
+      note:
+        'This link points to the upstream Marlin firmware used by the printer. Custom configuration files and build details can be shared on request.',
+      href: 'https://github.com/MarlinFirmware/Marlin/releases',
+    },
   }),
   createSupportingProject({
     slug: 'battery-management-system',
@@ -566,24 +591,26 @@ export const projects = [
     category: 'Electronics',
     tags: ['Embedded', 'Power Electronics', 'Hardware'],
     overview:
-      'A smart lithium-ion battery management system with monitoring and protection features.',
+      'A custom 3S lithium-ion battery management design focused on analog passive cell balancing and PCB-level understanding of multi-cell battery systems.',
     problem:
       'Lithium-ion packs require active monitoring and protection to remain safe and reliable over time.',
     architecture:
-      'Includes protection logic, balancing circuits, and embedded monitoring for safe lithium-ion pack operation.',
-    techStack: ['Embedded C', 'PCB Design', 'IoT', 'Altium'],
+      'The design uses a pure analog architecture with comparator-style voltage monitoring and MOSFET-controlled discharge paths to balance cells without an MCU.',
+    techStack: ['Analog Electronics', 'PCB Design', 'EasyEDA', 'Proteus', 'MOSFET Control'],
     working: [
       'Cell balancing',
-      'Temperature monitoring',
-      'Overcharge protection',
-      'SOC estimation',
+      'Comparator-based voltage detection',
+      'MOSFET-controlled discharge control',
+      'Multi-cell sensing for a 3S Li-ion pack',
     ],
     challenges: [
-      'Balancing safety protections with usable battery behavior.',
-      'Designing logic that supports both protection and pack-state estimation.',
+      'Designing analog balancing logic without an MCU.',
+      'Routing multi-cell sensing and power paths cleanly on a custom PCB.',
     ],
-    impact: 'Shows understanding of lithium-ion battery safety, protection systems, and embedded monitoring architecture.',
-    role: 'Built the battery-management concept and integrated monitoring and protection features into one system.',
+    impact:
+      'Shows foundational understanding of battery systems, passive balancing, analog control, and PCB design for power electronics.',
+    role:
+      'Designed the analog balancing concept and PCB implementation as a learning-focused battery systems project.',
     codeAvailability: {
       show: false,
     },
@@ -612,19 +639,12 @@ export const projects = [
       'Improving compatibility without unnecessary hardware complexity.',
       'Custom firmware tuning and motion control optimization for improved print precision.',
     ],
-    impact: 'Highlights custom PCB and controller design for machine control with improved compatibility and power handling.',
-    role: 'Designed the controller-board concept with focus on compatibility, power handling, and serviceability.',
+    impact:
+      'Highlights custom PCB and controller design for machine control with improved compatibility and power handling.',
+    role:
+      'Designed the controller-board concept with focus on compatibility, power handling, and serviceability.',
     codeAvailability: {
       show: false,
     },
   }),
-].map((project) => ({
-  ...project,
-  proof: {
-    ...project.proof,
-    imagePath: `/assets/projects/${project.slug}/images`,
-    videoPath: `/assets/projects/${project.slug}/videos`,
-    images: buildAssetPaths(project.slug, 'images', project.proof.imageFiles),
-    videos: buildAssetPaths(project.slug, 'videos', project.proof.videoFiles),
-  },
-}));
+];

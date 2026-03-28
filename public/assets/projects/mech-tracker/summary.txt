@@ -1,0 +1,44 @@
+PROJECT: Mech-Tracker (Android Device Recovery System)
+
+TYPE: Mobile Application / Security / Tracking System
+
+DESCRIPTION:
+Mech-Tracker is a multi-layer Android-based anti-theft and device recovery system designed to track, monitor, and control lost or stolen smartphones using redundant communication and positioning strategies.
+
+The system is built with a fallback-first architecture, ensuring device traceability even under constrained conditions such as lack of internet, GPS, or primary connectivity.
+
+FEATURES:
+- Real-time location tracking (GPS, UWB, BLE, network-based)
+- Multi-layer fallback tracking system
+- Remote device control via dashboard
+- Silent photo capture and audio recording (user-authorized)
+- SIM change detection and alerts
+- Remote lock, wipe, and ring functionality
+- Anti-uninstall protection
+- Background service with auto-start on boot
+- Multi-mode operation (Idle, Medium, Lost Mode)
+
+TRACKING STRATEGY:
+The system dynamically switches between multiple tracking methods:
+GPS → SIM-based SMS → UWB → Bluetooth (BLE mesh) → Nearby device relay (Mech-Tracker network)
+
+CONTROL SYSTEM:
+- Primary: Internet-based control via secure web dashboard (API/Firebase)
+- Fallback: SMS command-based control
+
+MODES OF OPERATION:
+- Idle Mode: Minimal background monitoring
+- Medium Mode: On-demand access to device features
+- Lost Mode: Full security activation with alerts, restrictions, and recovery tools
+
+WORKFLOW:
+Device → Background Service → Data Collection → Server → Dashboard Control Interface
+
+USE CASE:
+Designed as a personal anti-theft and recovery solution for smartphones, enabling users to locate and control lost devices under various real-world constraints.
+
+SECURITY NOTE:
+All features operate with user permissions and are intended strictly for personal device recovery and security purposes.
+
+STATUS:
+Fully implemented system with working dashboard, backend, and testing assets.

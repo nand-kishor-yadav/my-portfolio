@@ -1,0 +1,7 @@
+Arduino Shield & RAMPS 1.4 PCB Design is a hardware-focused project aimed at developing practical skills in PCB design and embedded system layout.
+
+The project includes the design of a custom Arduino-compatible shield and a detailed recreation of the RAMPS 1.4 (RepRap Arduino Mega Pololu Shield) controller board used in 3D printers. The goal was to understand real-world circuit layouts, component placement strategies, and multi-layer PCB routing techniques.
+
+Key areas of focus included power distribution, signal routing, stepper driver interfacing, and maintaining clean layout practices for reliability. The design process involved analyzing existing hardware references and translating them into custom PCB layouts using industry-standard tools.
+
+This project demonstrates foundational skills in PCB design, schematic interpretation, and embedded hardware architecture.

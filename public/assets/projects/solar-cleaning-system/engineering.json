@@ -1,0 +1,99 @@
+{
+    "Project Name": [
+        "Automated Solar Panel Cleaning System"
+    ],
+    "Slug": [
+        "solar-cleaning-system"
+    ],
+    "Project Type": [
+        "Embedded Systems",
+        "Industrial Automation"
+    ],
+    "Purpose": [
+        "Automated maintenance for solar panel efficiency"
+    ],
+    "Problem": [
+        "Dust accumulation on solar panels reduces efficiency and requires frequent manual cleaning"
+    ],
+    "Solution": [
+        "An automated rail-based cleaning system with scheduled and remote operation to maintain panel performance"
+    ],
+    "Architecture": [
+        "Distributed cleaning units with a centralized master controller handling multiple panels"
+    ],
+    "System Type": [
+        "Embedded mechanical automation system"
+    ],
+    "Pipeline": [
+        "User input or schedule trigger",
+        "ESP32 control logic",
+        "Motor driver activation",
+        "Rail movement system",
+        "Brush and water cleaning mechanism"
+    ],
+    "Controller": [
+        "ESP32"
+    ],
+    "Power Source": [
+        "External battery"
+    ],
+    "Cleaning Mechanism": [
+        "Rail-based linear motion",
+        "Brush cleaning system",
+        "Water spray integration"
+    ],
+    "Control Modes": [
+        "Scheduled automatic cleaning",
+        "Manual remote control via mobile app"
+    ],
+    "Scalability Design": [
+        "Master controller managing multiple panel units",
+        "Supports up to 6 panels",
+        "Centralized coordination with distributed execution"
+    ],
+    "Core Features": [
+        "Automated cleaning cycles",
+        "Remote operation capability",
+        "Rail-based movement system",
+        "Multi-panel coordination"
+    ],
+    "Performance Goal": [
+        "Reduce manual intervention and maintain optimal solar efficiency"
+    ],
+    "Operation": [
+        "Scheduled cleaning cycles",
+        "User-triggered cleaning cycles"
+    ],
+    "Challenges": [
+        "Designing a reliable rail-based movement system",
+        "Ensuring uniform cleaning across the panel surface",
+        "Power management for battery operation",
+        "Scaling control across multiple panels"
+    ],
+    "Applications": [
+        "Solar farms",
+        "Industrial solar installations",
+        "Rooftop solar systems",
+        "Renewable energy maintenance systems"
+    ],
+    "Learning Focus": [
+        "Embedded system design",
+        "Mechanical system integration",
+        "Power electronics",
+        "Industrial automation architecture"
+    ],
+    "Outcome": [
+        "Demonstrates the ability to design scalable real-world automation systems combining electronics, mechanics, and control logic"
+    ],
+    "Portfolio Value": [
+        "Shows a real-world industrial automation system",
+        "Highlights a scalable multi-panel cleaning architecture",
+        "Demonstrates direct application in renewable energy efficiency improvement"
+    ],
+    "Code Visibility": [
+        "Private"
+    ],
+    "Application Visibility": [
+        "Private"
+    ]
+}

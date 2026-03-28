@@ -1,0 +1,29 @@
+EMG-Controlled Robotic Arm (Human-Machine Interface Prototype)
+
+This project is a bio-signal-driven robotic control system that translates human muscle activity into mechanical motion. It demonstrates a complete Human-Machine Interface (HMI) pipeline, where EMG (Electromyography) signals are used to control a robotic actuator in real time.
+
+The system uses a custom-built EMG amplifier to capture and amplify low-level muscle signals from the human arm. These signals are then processed by an Arduino microcontroller, where basic filtering and signal conditioning are applied to extract meaningful control input.
+
+Based on the processed EMG signal, a servo motor is controlled to replicate the user’s arm movement. The system is designed such that muscle activation directly influences servo position, enabling intuitive control.
+
+System workflow:
+Muscle Activity → EMG Amplifier → Signal Processing (Arduino) → Servo Control → Mechanical Movement
+
+The prototype uses a single degree of freedom (1-DOF) robotic arm driven by a standard servo motor. While simple in structure, the system demonstrates the core concept of bio-controlled actuation.
+
+Key focus areas:
+- Bio-signal acquisition (EMG)
+- Analog signal amplification
+- Embedded signal processing
+- Real-time actuator control
+- Human-machine interaction
+
+The system was tested with live muscle input, where arm movements successfully translated into corresponding servo motion, validating the concept of EMG-based control.
+
+Although the project is currently a minimal prototype with limited physical assets, it establishes a strong foundation for advanced applications such as prosthetics, assistive robotics, and gesture-controlled systems.
+
+Tools used:
+- Custom EMG amplifier (LM358-based)
+- Arduino (signal processing and control)
+
+This project demonstrates interdisciplinary engineering across biomedical electronics, embedded systems, and robotics.

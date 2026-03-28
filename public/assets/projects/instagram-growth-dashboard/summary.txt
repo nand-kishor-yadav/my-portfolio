@@ -1,0 +1,31 @@
+PROJECT: Instagram Growth Dashboard
+
+TYPE: Analytics / Automation / Dashboard System
+
+DESCRIPTION:
+A real-time analytics dashboard designed to track, analyze, and compare Instagram account performance at scale. The system continuously collects account data, processes engagement metrics, and provides actionable insights for growth optimization.
+
+FEATURES:
+- Multi-account tracking
+- Followers, following, and post monitoring
+- Likes and comments per post tracking
+- Engagement rate calculation
+- Real-time (5-minute interval) data updates
+- Cross-account comparison
+- Alert system for activity changes
+- Data export functionality
+- Interactive dashboard visualization
+
+WORKFLOW:
+Instagram Source → API/Scraper Layer → Data Processing → Database → Dashboard UI
+
+The system uses an unofficial API with proxy rotation, falling back to scraping when required. Data is collected periodically, processed into structured metrics, and stored for time-series analysis and visualization.
+
+USE CASE:
+- Growth hacking and performance optimization
+- Monitoring multiple accounts simultaneously
+- Identifying engagement trends
+- Comparing account performance
+
+STATUS:
+Fully functional system with complete implementation, testing, and visualization assets.

@@ -1,0 +1,136 @@
+{
+    "Project Name": [
+        "Solar Monitoring & Telemetry System"
+    ],
+    "Slug": [
+        "solar-monitoring"
+    ],
+    "Project Type": [
+        "IoT",
+        "Embedded Systems",
+        "Analytics Platform"
+    ],
+    "Status": [
+        "Completed"
+    ],
+    "Purpose": [
+        "Real-time solar performance monitoring and analysis"
+    ],
+    "Deployment": [
+        "Industrial use-case ready"
+    ],
+    "Problem": [
+        "Lack of detailed real-time and environmental data limits optimization of solar panel performance"
+    ],
+    "Solution": [
+        "A multi-sensor telemetry system that captures environmental and electrical data, enabling performance analysis and efficiency optimization"
+    ],
+    "Architecture": [
+        "Dual-controller embedded system with hybrid communication and cloud-based dashboard"
+    ],
+    "System Type": [
+        "End-to-end IoT monitoring system"
+    ],
+    "Pipeline": [
+        "Sensor layer",
+        "Microcontroller processing with ESP32 and ATmega",
+        "Data aggregation",
+        "Communication layer using WiFi and GSM",
+        "Server storage",
+        "Web dashboard visualization"
+    ],
+    "Controllers": [
+        "ESP32",
+        "ATmega"
+    ],
+    "Sensors": [
+        "DHT11 for temperature and humidity",
+        "Pyranometer for irradiance",
+        "Wind speed sensor",
+        "Wind direction sensor",
+        "Dust sensor",
+        "ACS712 for current sensing",
+        "ZMPT101B for voltage sensing",
+        "Air density sensor"
+    ],
+    "Interfaces": [
+        "I2C",
+        "ADC-based sensing",
+        "GSM module using SIM900"
+    ],
+    "Collected Parameters": [
+        "Temperature",
+        "Humidity",
+        "Wind speed",
+        "Wind direction",
+        "Irradiance",
+        "Air density",
+        "Dust level",
+        "Solar voltage, current, and power",
+        "Inverter voltage, current, and power"
+    ],
+    "Collection Frequency": [
+        "10-minute interval"
+    ],
+    "Communication": [
+        "Primary: WiFi from ESP32 to server",
+        "Fallback: GSM from ESP32 or ATmega to server or user",
+        "Daily reports via GSM"
+    ],
+    "Core Features": [
+        "Real-time monitoring",
+        "Historical data logging",
+        "Full system telemetry",
+        "Multi-parameter sensing"
+    ],
+    "Analytics Features": [
+        "Efficiency calculation",
+        "Performance comparison",
+        "Trend analysis"
+    ],
+    "Interface": [
+        "Web dashboard",
+        "Real-time data visualization",
+        "Graph-based historical analysis",
+        "System monitoring interface"
+    ],
+    "Performance": [
+        "Update rate every 10 minute",
+        "High reliability with GSM fallback communication",
+        "Complete system-level monitoring coverage"
+    ],
+    "Power Source": [
+        "External power supply"
+    ],
+    "Challenges": [
+        "Integrating multiple sensors with different interfaces",
+        "Ensuring accurate data calibration",
+        "Maintaining reliable communication in remote environments",
+        "Designing dual-controller coordination",
+        "Handling continuous data logging efficiently"
+    ],
+    "Applications": [
+        "Solar farm monitoring",
+        "Industrial energy systems",
+        "Renewable energy analytics",
+        "Environmental impact monitoring"
+    ],
+    "Learning Focus": [
+        "IoT system design",
+        "Multi-sensor integration",
+        "Embedded system architecture",
+        "Telemetry and data pipelines",
+        "Real-time monitoring systems"
+    ],
+    "Outcome": [
+        "Demonstrates the ability to build complete IoT platforms combining hardware, communication, and analytics layers"
+    ],
+    "Portfolio Value": [
+        "Shows a full-stack IoT system with real-world deployment capability",
+        "Highlights the combination of environmental and electrical telemetry",
+        "Demonstrates direct application in renewable energy optimization and monitoring"
+    ],
+    "Code Visibility": [
+        "Private"
+    ]
+}

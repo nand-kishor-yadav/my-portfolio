@@ -1,0 +1,11 @@
+Android Automator is a configurable mobile automation engine designed to execute large-scale social media workflows across real Android devices.
+
+The system provides a high-level abstraction over mobile automation by combining Appium, ADB, and UIAutomator with a custom action layer capable of simulating complex human interactions such as scrolling, typing, gesture variation, and contextual navigation. It supports execution across a wide range of Android versions (7–16) and is optimized for stability under long-running, multi-device operations.
+
+A centralized control dashboard enables users to configure behavior, define execution strategies, and monitor real-time activity across connected devices. The platform supports parallel execution across hundreds of devices, allowing large-scale automation of engagement workflows.
+
+A key engineering aspect is its multi-layer UI detection system, which combines selector-based detection, text-based fallback, and vision-assisted matching to ensure robustness against dynamic UI changes. The system also includes retry mechanisms, session recovery, and configurable execution modes (standard and high-speed) to balance reliability and performance.
+
+Advanced features include dynamic workflow configuration, scheduling with randomized intervals, and adaptive interaction patterns that emulate realistic user behavior. The system also integrates optional AI-assisted content generation for contextual interactions.
+
+This project demonstrates expertise in building reusable automation engines, scalable mobile execution systems, and resilient UI abstraction layers.

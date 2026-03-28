@@ -1,0 +1,132 @@
+{
+  "Project Name": [
+    "Custom Servo"
+  ],
+  "Category": [
+    "Embedded Systems",
+    "Power Electronics",
+    "Mechanical Design"
+  ],
+  "Project Type": [
+    "Full system actuator design"
+  ],
+  "Complexity": [
+    "Advanced"
+  ],
+  "Goal": [
+    "Develop a high-torque, cost-effective alternative to commercial servo motors"
+  ],
+  "Compatibility": [
+    "Standard 3-pin servo interface",
+    "PWM",
+    "VCC",
+    "GND"
+  ],
+  "Architecture": [
+    "Closed-loop control system with custom power stage"
+  ],
+  "Target Output": [
+    "High torque in the ~30 kg-cm range"
+  ],
+  "Control System": [
+    "Closed-loop feedback-based control",
+    "Potentiometer feedback mechanism",
+    "Analog signal comparison and correction",
+    "PWM servo-standard input handling",
+    "Position error calculation",
+    "Control signal generation"
+  ],
+  "Analog Design": [
+    "LM358 operational amplifier",
+    "Signal conditioning",
+    "Error amplification",
+    "Control logic implementation"
+  ],
+  "Power Stage": [
+    "MOSFET-based motor driver",
+    "Custom H-bridge configuration",
+    "Efficient motor driving",
+    "High current handling",
+    "Bidirectional control"
+  ],
+  "Mechanical Design": [
+    "DC motor",
+    "Metal gearbox",
+    "Torque amplification",
+    "Durability",
+    "Precision movement"
+  ],
+  "Functionality": [
+    "Angle control",
+    "Standard servo interface",
+    "Drop-in replacement behavior",
+    "Suitable for robotics",
+    "Suitable for high-load actuation",
+    "Suitable for cost-sensitive applications"
+  ],
+  "Hardware Design": [
+    "Custom-designed PCB",
+    "EasyEDA / Proteus",
+    "Integrated control circuit",
+    "Integrated power stage",
+    "Integrated feedback interface"
+  ],
+  "Testing Status": [
+    "Tested"
+  ],
+  "Testing Method": [
+    "Controlled using Arduino PWM signals"
+  ],
+  "Validation": [
+    "Angle response verification",
+    "Feedback loop functionality",
+    "Motor control stability"
+  ],
+  "Testing Assets": [
+    "Testing images",
+    "Circuit designs"
+  ],
+  "Core Features": [
+    "Custom high-torque servo system",
+    "Standard PWM compatibility",
+    "Closed-loop position control",
+    "Analog control implementation without MCU",
+    "MOSFET-based efficient motor driving",
+    "Cost-optimized design"
+  ],
+  "Engineering Learning": [
+    "Closed-loop control systems",
+    "Feedback-based actuator design",
+    "Analog control circuit design",
+    "Motor driver H-bridge design",
+    "Mechanical and electrical system integration",
+    "PWM signal interpretation"
+  ],
+  "Challenges": [
+    "Designing a stable analog control loop",
+    "Handling higher current in the power stage",
+    "Maintaining compatibility with standard servo signals",
+    "Integrating mechanical and electrical subsystems"
+  ],
+  "Limitations": [
+    "Analog control limits flexibility compared to digital PID",
+    "No advanced tuning interface",
+    "Precision depends on potentiometer accuracy",
+    "Thermal considerations for high load are not fully optimized"
+  ],
+  "Future Improvements": [
+    "Add PID control using a microcontroller",
+    "Integrate current sensing for protection",
+    "Improve thermal management",
+    "Miniaturize PCB design",
+    "Add a digital calibration interface"
+  ],
+  "Portfolio Value": [
+    "Shows full-stack actuator engineering",
+    "Demonstrates a custom servo replacing commercial units",
+    "Highlights deep understanding of control systems and hardware design"
+  ],
+  "Code Visibility": [
+    "Private"
+  ]
+}

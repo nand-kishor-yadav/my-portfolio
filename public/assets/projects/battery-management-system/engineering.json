@@ -1,0 +1,101 @@
+{
+    "Project Name": [
+        "Battery Management System"
+    ],
+    "Category": [
+        "Embedded Systems",
+        "Power Electronics",
+        "PCB Design"
+    ],
+    "Project Type": [
+        "Learning project"
+    ],
+    "Complexity": [
+        "Intermediate"
+    ],
+    "Battery Type": [
+        "Li-ion 18650"
+    ],
+    "Configuration": [
+        "3S (3 cells in series)"
+    ],
+    "Voltage Range": [
+        "Approx 9V-12.6V nominal",
+        "4V-12V design consideration"
+    ],
+    "Architecture": [
+        "Pure analog"
+    ],
+    "Core Function": [
+        "Passive cell balancing"
+    ],
+    "Cell Balancing": [
+        "Passive balancing",
+        "Comparator-based voltage detection",
+        "MOSFET-controlled discharge",
+        "Designed to maintain equal voltage across all cells"
+    ],
+    "Control System": [
+        "Analog control approach",
+        "Comparators / op-amps",
+        "MOSFET switching elements",
+        "Voltage divider networks"
+    ],
+    "Protection Features": [
+        "Protection circuits not implemented in this version",
+        "Design currently focuses on balancing only"
+    ],
+    "PCB Design Tools": [
+        "Altium Designer",
+        "EasyEDA",
+        "Proteus"
+    ],
+    "PCB Type": [
+        "Custom BMS PCB"
+    ],
+    "Design Focus": [
+        "Clean routing for multi-cell sensing",
+        "Separation of power and signal paths",
+        "Component placement with thermal considerations"
+    ],
+    "Components Used": [
+        "MOSFETs for switching and discharge control",
+        "Comparators / operational amplifiers",
+        "Resistors for voltage dividers and biasing",
+        "Capacitors for stability and filtering"
+    ],
+    "Testing Status": [
+        "Not physically tested"
+    ],
+    "Testing Notes": [
+        "Design created for conceptual and PCB design learning purposes"
+    ],
+    "Engineering Learning": [
+        "Understanding of multi-cell battery management",
+        "Analog voltage monitoring techniques",
+        "Passive cell balancing design",
+        "MOSFET-based switching control",
+        "PCB design for power electronics systems"
+    ],
+    "Limitations": [
+        "No real-world testing or validation",
+        "No over-voltage or under-voltage protection",
+        "No temperature monitoring",
+        "No current sensing"
+    ],
+    "Future Improvements": [
+        "Add over-voltage and under-voltage protection",
+        "Integrate current sensing and short-circuit protection",
+        "Add temperature monitoring using NTC sensors",
+        "Upgrade to a hybrid analog + MCU architecture",
+        "Prototype and validate with a real battery pack"
+    ],
+    "Portfolio Value": [
+        "Demonstrates analog design and PCB engineering fundamentals",
+        "Shows understanding of BMS concepts without relying on an MCU",
+        "Acts as a foundation for more advanced battery systems in EV, solar, and robotics applications"
+    ],
+    "Code Visibility": [
+        "Not Applicable"
+    ]
+}

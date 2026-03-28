@@ -1,0 +1,39 @@
+Google Maps Business Data Extraction Tool
+
+This project is a scalable automation system designed to extract structured business intelligence from Google Maps search results for lead generation purposes. It eliminates the need for manual data collection by automating the entire workflow from query input to structured data export.
+
+The system is built using Java and Selenium-based browser automation, enabling it to interact dynamically with Google Maps UI elements. It supports both single and bulk search queries, extracting up to 120 business records per search and running continuously for extended durations.
+
+The extractor collects comprehensive business data, including:
+- Business name and category
+- Full address and plus code
+- Phone numbers, emails, and websites
+- Social media links (Facebook, Instagram, LinkedIn, etc.)
+- Ratings, reviews, and detailed review distribution
+- Operating hours and real-time open/closed status
+- Geographic coordinates (latitude & longitude)
+- Direct Google Maps links
+
+The system includes advanced automation features such as:
+- Auto scrolling and pagination handling
+- Deduplication and filtering of results
+- Captcha-aware handling
+- Proxy rotation for scalability
+- Multi-threaded execution for performance optimization
+
+Extracted data is structured and exported into Excel format, making it ready for business use in marketing, outreach, and analytics.
+
+The application is deployed as a web-based interface, allowing users to manage queries and monitor extraction tasks easily.
+
+This project focuses on:
+- Web automation and scraping at scale
+- Data extraction and structuring
+- Concurrency and performance optimization
+- Reliability in long-running automation systems
+- Real-world business application (lead generation)
+
+The system has been tested extensively and can run continuously for multiple days, handling large-scale data extraction workflows reliably.
+
+Assets include full source code, testing outputs, visuals, and working demonstrations.
+
+This project demonstrates strong expertise in automation engineering, scalable scraping systems, and real-world data pipeline design.

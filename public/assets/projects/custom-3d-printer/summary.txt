@@ -1,0 +1,28 @@
+Custom Cartesian 3D Printer (DIY Build)
+
+This project is a fully functional custom-built Cartesian 3D printer designed and assembled from scratch as part of hands-on learning in mechanical systems, embedded electronics, and firmware control. The system is inspired by Ender-3 style architecture but scaled and customized for larger build volume and cost optimization.
+
+The printer features an aluminum extrusion frame, providing structural rigidity and modularity. It supports an approximate build volume of 1 ft × 1 ft (XY) and 2 ft in the Z-axis, enabling larger vertical prints compared to standard consumer-grade printers.
+
+Motion control is implemented using a belt-driven system for X and Y axes to ensure smooth and fast movement, while the Z-axis is driven using a lead screw mechanism for precise vertical positioning. The system is powered by NEMA 17 stepper motors controlled via A4988 stepper drivers.
+
+The electronics are built around an Arduino Mega paired with a RAMPS 1.4 controller board, running Marlin firmware. The firmware is customized specifically to support the extended Z-axis lead screw configuration and calibrated motion parameters.
+
+A Bowden-style extrusion system is used to reduce moving mass on the print head, improving motion efficiency. Although the system does not include a heated bed, it supports basic thermistor-based temperature control for the hotend.
+
+The printer was successfully tested with real prints, including calibration cubes. Bed leveling and steps/mm calibration were performed to achieve acceptable print accuracy and stability.
+
+Key workflow:
+3D Model → Slicer → G-code → Marlin Firmware → Motion Control → Printed Object
+
+This project focuses on:
+- Mechanical system design (frame, motion system)
+- Embedded electronics integration
+- Stepper motor control and tuning
+- Firmware customization (Marlin)
+- Calibration and real-world testing
+- Cost-efficient hardware development
+
+Assets available include PCB references, build visuals, testing images, and working videos.
+
+This project demonstrates strong capabilities in system integration across mechanical, electrical, and firmware domains.

@@ -1,0 +1,11 @@
+Social Media Provisioning System is a multi-stage mobile automation platform designed to provision social media accounts through dependency-driven workflows on real Android devices.
+
+The system extends mobile automation beyond single-service execution by introducing a conditional pipeline where account creation flows are dynamically determined based on available input data. If user credentials are not provided, the system autonomously provisions prerequisite accounts (Gmail) before proceeding to dependent services (Instagram).
+
+Built using Appium, ADB, and UIAutomator, the system executes workflows on physical Android devices, ensuring high reliability and realistic interaction patterns. A centralized web dashboard enables dynamic configuration of workflows, allowing users to control whether prerequisite steps are executed or skipped.
+
+A key engineering component is cross-application orchestration, where the system transitions between applications (Gmail and Instagram) to retrieve verification data such as OTPs in real time and resume execution seamlessly. The automation engine incorporates retry logic, fallback navigation paths, and session persistence to handle failures across multi-stage workflows.
+
+The system supports parallel execution across multiple devices and maintains detailed logging of partial and complete workflow states, ensuring traceability even in cases of partial success (e.g., Gmail success but Instagram retry required).
+
+This project demonstrates advanced capabilities in workflow orchestration, dependency resolution, and resilient mobile automation across interconnected applications.

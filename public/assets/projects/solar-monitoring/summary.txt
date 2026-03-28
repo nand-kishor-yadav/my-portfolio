@@ -1,0 +1,42 @@
+PROJECT: Solar Monitoring & Telemetry System
+
+TYPE: IoT / Embedded Systems / Data Analytics Platform
+
+DESCRIPTION:
+A comprehensive solar monitoring system designed to collect, analyze, and visualize real-time environmental and electrical parameters from solar installations. The system integrates multi-sensor data acquisition, embedded processing, and cloud-based analytics to provide actionable insights for performance optimization.
+
+The solution is built for real-world deployment and supports full system monitoring, including solar panel output, inverter performance, and environmental conditions affecting efficiency.
+
+FEATURES:
+- Real-time monitoring (10-minute interval updates)
+- Environmental sensing:
+  Temperature, humidity, wind speed, wind direction, irradiance, air density, dust levels
+- Electrical monitoring:
+  Solar voltage, current, power
+  Inverter voltage, current, power
+- Efficiency calculation and performance comparison
+- Historical data visualization via web dashboard
+- Data logging and reporting
+- GSM-based daily reporting fallback
+
+ARCHITECTURE:
+- Dual-controller system (ESP32 + ATmega)
+- Multi-sensor data acquisition layer
+- Hybrid communication:
+  WiFi → Server (primary)
+  GSM → Server/User (fallback & reporting)
+- Web-based dashboard for visualization and monitoring
+
+WORKFLOW:
+Sensors → Microcontrollers → Data Processing → Communication Layer → Server → Web Dashboard
+
+The system continuously collects and processes data, transmitting it to a centralized server for visualization and analysis. In case of connectivity issues, GSM-based communication ensures continued reporting.
+
+USE CASE:
+- Industrial solar installations
+- Solar farm monitoring
+- Performance optimization and diagnostics
+- Environmental impact analysis on solar efficiency
+
+STATUS:
+Fully implemented and tested system with working hardware, dashboard, and deployment-ready architecture.

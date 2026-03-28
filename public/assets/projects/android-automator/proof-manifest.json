@@ -1,0 +1,17 @@
+{
+  "visualsImages": [
+    "image1.webp",
+    "image2.webp",
+    "image3.webp",
+    "image4.webp",
+    "image5.webp"
+  ],
+  "workingVideos": [
+    "video1.mp4",
+    "video2.mp4"
+  ],
+  "testingImages": [
+    "image1.webp",
+    "image2.webp"
+  ]
+}

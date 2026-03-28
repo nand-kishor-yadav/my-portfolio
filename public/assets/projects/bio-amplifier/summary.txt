@@ -1,0 +1,32 @@
+EMG Bio-Amplifier with Muscle-Controlled Actuation
+
+This project is a custom-designed EMG (Electromyography) bio-amplifier system developed to capture, amplify, and process muscle signals for real-world control applications. The system demonstrates the complete pipeline from biological signal acquisition to actuator control.
+
+The amplifier is built using the LM358 operational amplifier in a multi-stage configuration, designed to amplify low-amplitude EMG signals (~mV range) to a usable level. The system achieves an approximate gain of 100x and includes a low-pass filtering stage to reduce high-frequency noise and stabilize the signal.
+
+The hardware is implemented on a custom PCB, manually fabricated using a copper-clad board. The design includes:
+- Differential electrode input terminals for muscle signal acquisition
+- Signal amplification stage using LM358
+- Filtering stage for noise reduction
+- Output interface to microcontroller
+
+For testing and validation, the amplified signal is interfaced with an Arduino. The EMG signal is read and processed in real-time, and based on signal intensity, a servo motor is controlled. This demonstrates practical conversion of muscle activity into mechanical motion.
+
+Key workflow:
+Muscle Signal → Electrodes → Amplifier → Filter → Arduino Processing → Servo Control
+
+This project focuses on:
+- Bio-signal acquisition and conditioning
+- Analog signal amplification
+- Noise filtering techniques
+- PCB design and manual fabrication
+- Embedded system integration
+- Human-machine interaction
+
+The system was successfully tested with real muscle input, where arm muscle activity directly controlled a servo motor, validating both signal amplification and system integration.
+
+Tools used:
+- EasyEDA / Proteus (schematic + PCB design)
+- Arduino (signal processing and control)
+
+This project demonstrates strong fundamentals in analog electronics, biomedical signal processing, and embedded control systems.

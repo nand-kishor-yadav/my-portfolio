@@ -1,0 +1,132 @@
+{
+    "Project Name": [
+        "Google Maps Extractor"
+    ],
+    "Category": [
+        "Automation",
+        "Web Scraping",
+        "Data Engineering"
+    ],
+    "Project Type": [
+        "Production-level tool"
+    ],
+    "Complexity": [
+        "Advanced"
+    ],
+    "Purpose": [
+        "Automated business lead generation"
+    ],
+    "Input": [
+        "Single search queries",
+        "Bulk search queries"
+    ],
+    "Output": [
+        "Structured business data in Excel format",
+        "Up to 120 results per query with bulk processing support"
+    ],
+    "Extracted Fields": [
+        "Business name",
+        "Full address",
+        "Plus code",
+        "Website",
+        "Phone",
+        "Email",
+        "Social media links",
+        "Latitude and longitude",
+        "Category",
+        "Rating",
+        "Reviews count",
+        "Review distribution from 1-star to 5-star",
+        "Operating hours with daily breakdown",
+        "Open or closed status",
+        "Google Maps link"
+    ],
+    "Architecture": [
+        "Browser automation using Selenium",
+        "Java-based implementation",
+        "Multi-threaded execution model",
+        "Proxy rotation support",
+        "Captcha-aware handling",
+        "Bulk query execution"
+    ],
+    "UI Interaction": [
+        "Dynamic scrolling",
+        "Pagination handling",
+        "Element detection"
+    ],
+    "Data Handling": [
+        "Deduplication",
+        "Filtering",
+        "Structured parsing"
+    ],
+    "Reliability Features": [
+        "Long-duration execution",
+        "Error tolerance",
+        "Retry handling"
+    ],
+    "Output System": [
+        "Excel XLSX export",
+        "Tabular business dataset",
+        "Suitable for lead generation",
+        "Suitable for marketing outreach",
+        "Suitable for business analytics"
+    ],
+    "Interface": [
+        "Web application",
+        "Query management",
+        "Task monitoring",
+        "Execution control"
+    ],
+    "Testing Status": [
+        "Fully tested"
+    ],
+    "Testing Performance": [
+        "Stable for long-running sessions including multi-day execution"
+    ],
+    "Validation": [
+        "Accurate data extraction",
+        "Reliable pagination handling",
+        "Consistent output formatting"
+    ],
+    "Core Features": [
+        "Bulk query support",
+        "High-volume data extraction",
+        "Comprehensive business data collection",
+        "Multi-threaded execution",
+        "Proxy and captcha handling",
+        "Automated Excel export",
+        "Web-based control panel"
+    ],
+    "Engineering Learning": [
+        "Web automation at scale",
+        "Concurrency and multi-threading",
+        "Data parsing and structuring",
+        "Handling anti-bot mechanisms",
+        "System reliability for long-running tasks",
+        "Real-world data pipeline design"
+    ],
+    "Challenges": [
+        "Maintaining stability under long execution cycles",
+        "Handling captchas and anti-scraping mechanisms",
+        "Managing proxy rotation efficiently",
+        "Balancing speed and reliability in multi-threading"
+    ],
+    "Limitations": [
+        "Dependent on the UI structure of Google Maps",
+        "Captcha interruptions can affect throughput",
+        "Requires proxy management for large-scale scraping"
+    ],
+    "Future Improvements": [
+        "Distributed scraping architecture",
+        "Real-time dashboard analytics",
+        "Integration with CRM systems"
+    ],
+    "Portfolio Value": [
+        "Shows a production-grade scraping and automation system",
+        "Combines automation, concurrency, and business application",
+        "Demonstrates direct real-world use in lead generation and data collection"
+    ],
+    "Code Visibility": [
+        "Private"
+    ]
+}

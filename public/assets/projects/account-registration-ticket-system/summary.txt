@@ -1,0 +1,16 @@
+Automated Account Registration & Ticket Generation System
+
+Many support workflows require repeatedly creating accounts and raising tickets across multiple third-party platforms, which is time-consuming and difficult to scale manually. This system was built to automate that process in a controlled and repeatable way for internal support operations.
+
+Developed a Selenium-based Java automation engine that reads target URLs and user datasets from structured input files, performs dynamic account registration, logs into each platform, navigates to support interfaces, and submits tickets automatically. The system is designed to handle variations in page structure across different websites.
+
+Key capabilities include:
+- Automated account registration and login across multiple platforms using input datasets
+- Dynamic detection of form fields and support pages across varying website structures
+- Ticket submission workflow with persistent logging of credentials and ticket data
+- Rate limiting and duplicate prevention to ensure controlled execution
+- Basic CAPTCHA handling strategies for uninterrupted automation
+
+The system was tested with 1000+ automated user flows and used in a production-like environment for bulk support operations. Execution results were recorded in structured logs containing URL, account credentials, and ticket details for traceability.
+
+This project demonstrates browser automation, resilient workflow design, input-driven execution pipelines, and handling of real-world variability in web systems.

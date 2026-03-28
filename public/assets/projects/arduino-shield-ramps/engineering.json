@@ -1,0 +1,56 @@
+{
+    "Project Name": [
+        "Arduino Shield & RAMPS 1.4 PCB Design"
+    ],
+    "Category": [
+        "Embedded Hardware"
+    ],
+    "Project Type": [
+        "PCB Design"
+    ],
+    "Description": [
+        "A hardware design project focused on creating Arduino-compatible PCB layouts and recreating the RAMPS 1.4 3D printer controller board for learning and skill development."
+    ],
+    "Boards Designed": [
+        "Custom Arduino Shield",
+        "RAMPS 1.4 (3D Printer Controller Board)"
+    ],
+    "Design Objectives": [
+        "Understand PCB design fundamentals",
+        "Practice schematic-to-layout conversion",
+        "Learn component placement and routing strategies",
+        "Analyze real-world embedded hardware designs"
+    ],
+    "Key Design Areas": [
+        "Power distribution and voltage handling",
+        "Signal routing and trace optimization",
+        "Stepper motor driver interfacing",
+        "Connector placement and usability"
+    ],
+    "Design Process": [
+        "Studied reference schematics and existing board layouts",
+        "Created schematic diagrams",
+        "Designed PCB layout with proper component placement",
+        "Performed routing with focus on clarity and efficiency"
+    ],
+    "Tools Used": [
+        "PCB Design Software (e.g., Altium / EasyEDA / Proteus)"
+    ],
+    "Challenges": [
+        "Understanding complex multi-component board layouts",
+        "Managing routing for dense PCB designs",
+        "Maintaining clean and readable trace paths",
+        "Balancing component placement with routing efficiency"
+    ],
+    "Outcome": [
+        "Successfully designed functional PCB layouts for Arduino shield and RAMPS 1.4",
+        "Gained hands-on experience in embedded hardware design"
+    ],
+    "Artifacts": [
+        "PCB layout images",
+        "Schematic diagrams"
+    ],
+    "Code Visibility": [
+        "Not Applicable"
+    ]
+}

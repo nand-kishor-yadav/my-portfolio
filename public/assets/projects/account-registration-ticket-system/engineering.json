@@ -1,0 +1,107 @@
+{
+  "Project Name": ["Automated Account Registration & Ticket Generation System"],
+  "Domain": ["Browser Automation", "Workflow Automation"],
+
+  "Problem": [
+    "Manual account creation and ticket submission across multiple external platforms is repetitive, time-consuming, and not scalable for support operations"
+  ],
+
+  "Solution": [
+    "Developed a Selenium-based automation engine that executes end-to-end workflows including account registration, login, navigation, and ticket submission using structured input datasets"
+  ],
+
+  "Architecture Overview": [
+    "Input-driven automation pipeline where URLs and user data are parsed from files and executed sequentially through a browser automation engine with dynamic page handling"
+  ],
+
+  "Architecture Components": [
+    "Input Parser (urls.txt, users.txt)",
+    "Selenium WebDriver Engine",
+    "Dynamic Form Detection Layer",
+    "Workflow Executor (Register -> Login -> Navigate -> Submit Ticket)",
+    "Execution Logger"
+  ],
+
+  "Data Flow": [
+    "Load target URLs from input file",
+    "Load user dataset (name, email, issue)",
+    "Launch browser instance via WebDriver",
+    "Dynamically detect registration fields",
+    "Submit registration form",
+    "Authenticate using generated credentials",
+    "Navigate to support or help section",
+    "Submit ticket with provided issue",
+    "Persist execution results to output log"
+  ],
+
+  "Core Features": [
+    "Cross-platform automation across multiple websites",
+    "End-to-end workflow execution (registration to ticket submission)",
+    "Dynamic DOM-based form detection",
+    "Persistent execution logging for traceability",
+    "Duplicate prevention and controlled execution rate",
+    "CAPTCHA interruption handling strategies"
+  ],
+
+  "Language": ["Java"],
+  "Automation Framework": ["Selenium WebDriver"],
+  "Runtime": ["Executable JAR"],
+  "Dependencies": ["ChromeDriver"],
+
+  "Input and Output": [
+    "urls.txt (target platforms)",
+    "users.txt (user data input)",
+    "output.txt (execution logs with credentials and ticket details)"
+  ],
+
+  "Execution Model": [
+    "Sequential batch processing",
+    "Input-driven execution pipeline",
+    "Local deployment via standalone JAR"
+  ],
+
+  "Metrics": [
+    "1000+ automated user workflows executed",
+    "Stable execution across repeated batch runs",
+    "Multi-site processing with consistent success tracking",
+    "Per-run logging of success and failure states"
+  ],
+
+  "Testing Scenarios": [
+    "Execution across websites with varying DOM structures",
+    "Repeated user registration and ticket submission",
+    "End-to-end workflow validation (registration to ticket)",
+    "Handling missing fields and unexpected page layouts"
+  ],
+
+  "Testing Results": [
+    "Successful execution across 1000+ automated runs",
+    "Reliable detection of input fields across multiple platforms",
+    "Consistent ticket submission workflow completion"
+  ],
+
+  "Challenges": [
+    "Handling variability in website structures and navigation flows",
+    "Preventing duplicate registrations and repeated submissions",
+    "Managing CAPTCHA interruptions during automation"
+  ],
+
+  "Challenge Solutions": [
+    "Implemented dynamic element detection instead of static selectors",
+    "Introduced validation, tracking, and rate limiting mechanisms",
+    "Designed fallback handling strategies for CAPTCHA interruptions"
+  ],
+
+  "Engineering Focus": [
+    "Designing a reusable automation engine rather than a one-off script",
+    "Handling real-world variability in web interfaces",
+    "Building input-driven execution pipelines",
+    "Ensuring traceability through structured logging"
+  ],
+
+  "Proof Status": [
+    "Validated through large-scale execution logs and repeated batch runs"
+  ],
+
+  "Code Visibility": ["Private"]
+}

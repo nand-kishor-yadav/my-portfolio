@@ -1,0 +1,137 @@
+{
+    "Project Name": [
+        "MechTodo"
+    ],
+    "Slug": [
+        "mechtodo"
+    ],
+    "Project Type": [
+        "Mobile application",
+        "Productivity system"
+    ],
+    "Platform": [
+        "Android"
+    ],
+    "Purpose": [
+        "Personal productivity",
+        "Structured task management"
+    ],
+    "Status": [
+        "Completed"
+    ],
+    "Problem": [
+        "Basic to-do applications lack structured workflows, flexible scheduling, and meaningful task categorization"
+    ],
+    "Solution": [
+        "A structured task management system with workflow states, smart reminders, and rule-based scheduling logic"
+    ],
+    "Architecture": [
+        "Offline-first mobile application",
+        "Local storage",
+        "Rule-based scheduling engine",
+        "Custom reminder system"
+    ],
+    "System Type": [
+        "Task management and scheduling system"
+    ],
+    "Pipeline": [
+        "Task input",
+        "Rule configuration",
+        "Local storage",
+        "Reminder engine",
+        "Notification or reminder activity",
+        "User interaction"
+    ],
+    "Core Features": [
+        "Task creation, editing, deletion, and completion",
+        "Category-based organization",
+        "Priority-based task management",
+        "Task status lifecycle tracking"
+    ],
+    "Advanced Features": [
+        "Rule-based scheduling system",
+        "Daily, weekly, and monthly recurrence logic",
+        "Deadline-based project tasks",
+        "Smart reminder system with snooze",
+        "Custom reminder activity UI",
+        "Offline-first operation",
+        "Daily summary reminder with configurable default time"
+    ],
+    "Aggregation System": [
+        "Daily task summarization",
+        "Counts total pending tasks for the day",
+        "Triggers a consolidated reminder notification",
+        "Displays summarized task workload",
+        "User-configurable default trigger time"
+    ],
+    "Task Model Fields": [
+        "Title",
+        "Description",
+        "Project",
+        "Priority",
+        "Task Type",
+        "Status",
+        "Repeat configuration",
+        "Deadline or time-based trigger"
+    ],
+    "Task Categories": [
+        "All",
+        "Daily",
+        "Projects",
+        "In Progress",
+        "Completed",
+        "Planned",
+        "On Hold",
+        "Overdue"
+    ],
+    "Reminder System": [
+        "Custom in-app reminder engine",
+        "Time-based reminders",
+        "Recurring task handling",
+        "Snooze functionality",
+        "Dynamic scheduling based on task rules"
+    ],
+    "Data Management": [
+        "Local database",
+        "Offline-first mode",
+        "Real-time updates within the application"
+    ],
+    "Performance": [
+        "High responsiveness due to local storage",
+        "Reliable without internet connectivity",
+        "Optimized for daily usage and fast task access"
+    ],
+    "Challenges": [
+        "Designing a flexible rule-based scheduling system",
+        "Handling multiple recurrence patterns efficiently",
+        "Maintaining clean task state transitions",
+        "Implementing a reliable reminder engine"
+    ],
+    "Applications": [
+        "Personal productivity tools",
+        "Task scheduling systems",
+        "Workflow management applications",
+        "Habit tracking systems"
+    ],
+    "Learning Focus": [
+        "Mobile app architecture",
+        "State-based workflow design",
+        "Scheduling and recurrence systems",
+        "Offline-first application design",
+        "User experience for productivity tools"
+    ],
+    "Outcome": [
+        "Demonstrates the ability to build structured productivity systems with complex task logic and scheduling capabilities"
+    ],
+    "Portfolio Value": [
+        "Shows a well-structured productivity system with workflow logic",
+        "Highlights rule-based task scheduling and lifecycle management",
+        "Demonstrates a practical daily-use application with strong system design"
+    ],
+    "Code Visibility": [
+        "Private"
+    ],
+    "Application Visibility": [
+        "Available on request"
+    ]
+}

@@ -1,0 +1,11 @@
+Android Account Creation System is a distributed mobile automation platform designed to provision user accounts at scale using real Android devices.
+
+The system leverages Appium-based automation combined with ADB and UIAutomator to simulate complete user workflows across Google service applications such as Gmail and Play Store. Unlike browser-based automation, this system operates on physical devices, improving reliability and closer alignment with real user behavior.
+
+A centralized web dashboard controls data input, device orchestration, execution monitoring, and result logging. The system supports parallel execution across multiple devices, enabling high-throughput account provisioning workflows.
+
+Key engineering challenges addressed include dynamic UI detection, failure recovery, session management, and maintaining execution stability across long-running automation cycles. The system incorporates retry mechanisms, fallback selectors, and randomized interaction patterns to improve robustness under changing UI conditions.
+
+Performance testing demonstrated stable execution across 100+ concurrent devices, with automated workflows completing within ~5-6 minutes per cycle and maintaining high success rates under controlled conditions.
+
+This project demonstrates expertise in mobile automation, distributed systems, and building resilient real-world automation pipelines.

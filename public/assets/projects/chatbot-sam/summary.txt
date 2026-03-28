@@ -1,0 +1,7 @@
+SAM is a local-first autonomous AI agent runtime built to handle more than conversational replies. Instead of stopping at a chat response, it routes requests through an execution pipeline that can classify intent, generate plans, select tools, track task state, evaluate results, replan after failure, persist memory, and expose the whole runtime through a live browser control interface.
+
+The core problem behind the project was that most assistant-style systems can answer questions, but they usually do not maintain structured work state, survive across sessions, critique execution quality, manage retries, or provide an operational interface for monitoring and control. SAM was designed to close that gap by treating a request as executable work rather than plain text generation.
+
+Architecturally, the system combines a Python runtime, built-in HTTP API server, planner, intent engine, tool router, scheduler, task engine, critic, replanner, memory stack, identity layer, and a browser-based WebUI. The UI includes chat, task monitoring, dev controls, trust/audit surfaces, and a Jarvis-style visual system to make the runtime observable while it is running.
+
+This proof set is intended to demonstrate that SAM is not just a chatbot UI. The available screenshots and video support the broader engineering story: a persistent task-driven agent system with planning, execution, background work, memory, and real-time control surfaces built into one runtime.

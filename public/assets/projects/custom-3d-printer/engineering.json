@@ -1,0 +1,134 @@
+{
+    "Project Name": [
+        "Custom 3D Printer"
+    ],
+    "Category": [
+        "Robotics",
+        "Embedded Systems",
+        "Mechanical Design"
+    ],
+    "Project Type": [
+        "Full system build"
+    ],
+    "Complexity": [
+        "Advanced"
+    ],
+    "Printer Type": [
+        "Cartesian"
+    ],
+    "Design Inspiration": [
+        "Ender-3 style architecture"
+    ],
+    "Build Volume": [
+        "Approx 1 ft x 1 ft in XY",
+        "Approx 2 ft in Z"
+    ],
+    "Project Goals": [
+        "Hands-on learning",
+        "Cost optimization",
+        "Full system understanding"
+    ],
+    "Frame Design": [
+        "Aluminum extrusion frame"
+    ],
+    "Motion System": [
+        "Belt-driven X and Y axes",
+        "Lead screw-driven Z axis"
+    ],
+    "Mechanical Advantages": [
+        "High rigidity",
+        "Modular design",
+        "Stable vertical motion"
+    ],
+    "Controller": [
+        "Arduino Mega",
+        "RAMPS 1.4"
+    ],
+    "Stepper Drivers": [
+        "A4988"
+    ],
+    "Motors": [
+        "NEMA 17"
+    ],
+    "Control Capabilities": [
+        "Multi-axis motion control",
+        "Stepper precision tuning",
+        "Real-time execution of G-code"
+    ],
+    "Extrusion System": [
+        "Bowden extrusion system"
+    ],
+    "Heated Bed": [
+        "Not included"
+    ],
+    "Temperature Control": [
+        "Thermistor-based hotend control"
+    ],
+    "Firmware Platform": [
+        "Marlin"
+    ],
+    "Firmware Customizations": [
+        "Z-axis lead screw calibration",
+        "Steps/mm tuning",
+        "Motion parameter adjustments"
+    ],
+    "Calibration Performed": [
+        "Bed leveling",
+        "Steps/mm calibration",
+        "Calibration cube test prints"
+    ],
+    "Testing Status": [
+        "Successfully tested"
+    ],
+    "Testing Outputs": [
+        "Calibration cube",
+        "Basic print validation"
+    ],
+    "Validation Points": [
+        "Motion accuracy",
+        "Layer alignment",
+        "System stability"
+    ],
+    "Core Features": [
+        "Large Z-axis build capability",
+        "Custom-built frame and motion system",
+        "Open-source firmware customization",
+        "Bowden extrusion for reduced moving mass",
+        "Cost-effective design",
+        "Fully functional 3D printing system"
+    ],
+    "Engineering Learning": [
+        "Mechanical system design and assembly",
+        "Stepper motor control and tuning",
+        "Embedded firmware configuration using Marlin",
+        "Motion system calibration",
+        "3D printing workflow understanding",
+        "System-level integration"
+    ],
+    "Limitations": [
+        "No heated bed, which limits material compatibility",
+        "Basic extrusion system",
+        "Limited high-speed optimization",
+        "No auto bed leveling"
+    ],
+    "Future Improvements": [
+        "Add a heated bed for advanced materials",
+        "Upgrade to TMC drivers for silent operation",
+        "Implement auto bed leveling with BLTouch",
+        "Add an enclosure for temperature stability",
+        "Improve print speed and acceleration tuning"
+    ],
+    "Assets Available": [
+        "Build images",
+        "Testing visuals",
+        "Working videos"
+    ],
+    "Portfolio Value": [
+        "Shows full-stack hardware work across mechanical, electronics, and firmware domains",
+        "Demonstrates a custom large-format DIY printer",
+        "Highlights real engineering capability beyond theory"
+    ],
+    "Code Visibility": [
+        "https://github.com/MarlinFirmware/Marlin/releases"
+    ]
+}

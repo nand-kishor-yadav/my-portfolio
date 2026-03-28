@@ -1,0 +1,105 @@
+{
+    "Project Name": [
+        "EMG Robotic Arm"
+    ],
+    "Category": [
+        "Robotics",
+        "Biomedical Engineering",
+        "Embedded Systems"
+    ],
+    "Project Type": [
+        "Concept prototype"
+    ],
+    "Complexity": [
+        "Intermediate"
+    ],
+    "Application": [
+        "Human-machine interface"
+    ],
+    "Control Input": [
+        "EMG muscle signals"
+    ],
+    "Output": [
+        "Servo-based robotic movement"
+    ],
+    "Degrees of Freedom": [
+        "1"
+    ],
+    "Architecture": [
+        "Bio-signal -> processing -> actuation"
+    ],
+    "Signal Pipeline": [
+        "Muscle activity input",
+        "EMG electrode acquisition",
+        "Custom EMG amplifier using LM358",
+        "Analog signal reading",
+        "Basic filtering in Arduino",
+        "Signal conditioning",
+        "Servo motor position control"
+    ],
+    "Hardware Components": [
+        "Custom EMG amplifier",
+        "Arduino",
+        "Standard servo motor",
+        "Analog signal input from amplifier"
+    ],
+    "Control System": [
+        "Bio-signal driven control",
+        "Signal-based angle mapping",
+        "Servo position corresponds to muscle activation level"
+    ],
+    "Functionality": [
+        "Real-time EMG signal acquisition",
+        "Muscle-based actuator control",
+        "Basic gesture-to-motion mapping",
+        "Human-machine interaction demonstration"
+    ],
+    "Testing Status": [
+        "Tested"
+    ],
+    "Testing Method": [
+        "Live muscle signal input"
+    ],
+    "Testing Result": [
+        "Successful servo movement based on muscle activation"
+    ],
+    "Validation": [
+        "Signal detection confirmed",
+        "Control mapping functional",
+        "System responsiveness verified"
+    ],
+    "Core Features": [
+        "End-to-end bio-signal control pipeline",
+        "Real-time processing and actuation",
+        "Simple robotic arm prototype",
+        "Low-cost implementation"
+    ],
+    "Engineering Learning": [
+        "Bio-signal acquisition and processing",
+        "Analog-to-digital signal interfacing",
+        "Embedded control systems",
+        "Human-machine interface design",
+        "Signal-to-motion mapping"
+    ],
+    "Limitations": [
+        "Single degree of freedom",
+        "Basic signal processing without advanced filtering",
+        "Limited precision and stability",
+        "No physical robotic structure documentation"
+    ],
+    "Future Improvements": [
+        "Expand to a multi-DOF robotic arm",
+        "Use a custom high-torque servo system",
+        "Implement advanced EMG signal processing such as RMS and envelope detection",
+        "Add wireless control using Bluetooth or WiFi",
+        "Improve mechanical design and structure"
+    ],
+    "Portfolio Value": [
+        "Shows an interdisciplinary system across biomedical electronics and robotics",
+        "Demonstrates direct human muscle control of a machine",
+        "Acts as a foundation for prosthetics and advanced human-machine interface systems"
+    ],
+    "Code Visibility": [
+        "Private"
+    ]
+}

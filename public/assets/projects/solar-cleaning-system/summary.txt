@@ -1,0 +1,31 @@
+PROJECT: Automated Solar Panel Cleaning System
+
+TYPE: Embedded Systems / Mechanical Design / Industrial Automation
+
+DESCRIPTION:
+An automated solar panel cleaning system designed to maintain panel efficiency by removing dust and debris using a rail-based cleaning mechanism. The system is built for scalable deployment across multiple panels with centralized control.
+
+The design focuses on reliability, low maintenance, and automation to reduce manual cleaning effort in solar installations.
+
+FEATURES:
+- Time-based automatic cleaning
+- Remote control via mobile interface
+- Rail-based linear motion system
+- Brush and water spray cleaning mechanism
+- External battery-powered operation
+- Multi-panel support via master controller
+
+WORKFLOW:
+Scheduled Trigger / Manual Command → ESP32 Controller → Motor Drive System → Cleaning Mechanism Activation
+
+The system operates on predefined schedules or user commands, activating a rail-mounted cleaning unit that moves across the panel surface while performing brush and water-based cleaning.
+
+ARCHITECTURE:
+- Local cleaning unit per panel
+- Centralized master controller for up to 6 panels
+- Embedded control using ESP32
+
+USE CASE:
+- Solar farms
+- Rooftop solar installations
+- Industrial solar maintenance
