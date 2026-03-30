@@ -5,36 +5,28 @@ const experiences = [
   {
     title: 'Technical Support Engineer',
     company: 'Necro Automations',
-    period: 'Mar-2023 - Present',
-    type: 'previous',
+    period: 'Mar 2024 – Present',
+    type: 'current',
     achievements: [
-      'Technical assistance & debugging',
-      'Client support & training',
-      'Reduced resolution time by 30%',
-    ],
-  },
-  {
-    title: 'Research Analyst',
-    company: 'MarkScan',
-    period: 'Jan-2023 - Mar-2023',
-    type: 'previous',
-    achievements: [
-      'Data analysis',
-      'Legal collaboration',
-      'Copyright investigation',
+      'Designed and developed embedded hardware systems and production-ready PCB layouts',
+      'Integrated microcontrollers with sensors, actuators, and communication interfaces (UART, I2C, SPI, GSM)',
+      'Performed advanced debugging and root-cause failure diagnostics across hardware–firmware layers',
+      'Built and validated robotics and automation systems for real-world deployment',
+      'Developed power electronics solutions including motor drivers and converters',
+      'Created technical documentation: schematics, test procedures, and system architecture',
     ],
   },
   {
     title: 'Electronics & PCB Design Trainer',
-    company: 'APSD Innovation Infotech (Training Center)',
-    period: '',
+    company: 'APSD Innovation Infotech',
+    period: 'Mar 2023 – Mar 2024',
     type: 'previous',
     achievements: [
-      'Taught electronics fundamentals and PCB design workflows to students',
-      'Platforms: Altium Designer, Proteus, EasyEDA',
-      'Guided schematic capture, component selection, and PCB layout practices',
-      'Delivered hands-on lab sessions and troubleshooting support',
-      'Recognized with Best Star Performance Award for training impact',
+      'Delivered hands-on training in electronics fundamentals and PCB design (Altium, Proteus, EasyEDA)',
+      'Mentored students in schematic design, component selection, and PCB layout best practices',
+      'Designed lab exercises simulating real-world embedded system development scenarios',
+      'Provided troubleshooting guidance and technical support during lab sessions',
+      'Awarded Best Star Performance Award for training effectiveness and student outcomes',
     ],
   },
 ];
@@ -43,7 +35,7 @@ export default function Experience() {
   return (
     <section id="experience" className="relative py-20 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-cyber-dark to-cyber-black" />
-      
+
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -70,9 +62,8 @@ export default function Experience() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
-              className={`relative flex items-center mb-12 ${
-                index % 2 === 0 ? 'md:flex-row-reverse' : ''
-              }`}
+              className={`relative flex items-center mb-12 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''
+                }`}
             >
               {/* Timeline dot */}
               <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-cyber-blue rounded-full z-10">
@@ -83,14 +74,12 @@ export default function Experience() {
               <div className="hidden md:block w-1/2" />
 
               {/* Content Card */}
-              <div className={`ml-16 md:ml-0 w-full md:w-1/2 ${
-                index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'
-              }`}>
+              <div className={`ml-16 md:ml-0 w-full md:w-1/2 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'
+                }`}>
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className={`cyber-card relative overflow-hidden ${
-                    exp.type === 'promotion' ? 'border-cyber-glow/50' : ''
-                  }`}
+                  className={`cyber-card relative overflow-hidden ${exp.type === 'promotion' ? 'border-cyber-glow/50' : ''
+                    }`}
                 >
                   {/* Promotion badge */}
                   {exp.type === 'promotion' && (
