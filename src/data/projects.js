@@ -49,19 +49,20 @@ export const projects = [
     category: 'Embedded Systems / IoT / Robotics',
     tags: ['Embedded', 'IoT', 'Automation', 'Power Systems', 'Robotics'],
     overview:
-      'An automated solar panel cleaning system that uses rail-based motion, brush cleaning, and water spray to maintain panel efficiency across multiple panels with centralized control.',
+      'An automated solar panel cleaning system that uses rail-based motion, brush cleaning, and water spray to maintain panel efficiency across multiple panels with centralized control and a completed custom PCB design.',
     problem:
       'Dust accumulation significantly reduces solar panel efficiency, while manual cleaning is labor-intensive and inefficient for multi-panel installations.',
     architecture:
-      'A centralized ESP32-S3 master controller manages up to 6 panel units using sequential execution logic. Each panel integrates motorized wiper actuation, water spray system, and dual limit-switch feedback. The system includes a dedicated power distribution architecture with motor drivers, MOSFET-controlled pumps, and a regulated logic supply via buck conversion. Sequential operation ensures reduced peak current and improved system stability.',
+      'A centralized ESP32-based master controller manages up to 6 panel units using sequential execution logic. Each panel integrates motorized rail movement, water spray control, and feedback handling. The system includes a completed custom PCB architecture for controller, motor driver, pump control, and power distribution sections, with schematic capture and 3D PCB design completed for the current hardware milestone.',
     techStack: [
-      'ESP32-S3',
+      'ESP32',
       'Embedded C',
       'DRV8871 Motor Drivers',
       'MOSFET Power Control',
       'Limit Switch Feedback System',
       'Power Electronics Design',
       'PCB Design',
+      'Schematic Design',
       'IoT (WiFi/BLE)',
     ],
     working: [
@@ -80,9 +81,9 @@ export const projects = [
       'Coordinating sequential logic for stable multi-panel operation.',
     ],
     impact:
-      'Demonstrates system-level engineering by integrating embedded control, power electronics, and mechanical automation into a scalable and energy-efficient solar maintenance solution.',
+      'Demonstrates system-level engineering by integrating embedded control, power electronics, PCB design, and mechanical automation into a scalable solar maintenance solution.',
     role:
-      'Designed the complete system architecture including control logic, power distribution, actuator integration, and PCB-level implementation for a multi-panel automated cleaning system.',
+      'Designed the complete system architecture including control logic, power distribution, actuator integration, schematic capture, and completed PCB design for a multi-panel automated cleaning system.',
     proof: {
       projectDir: 'solar-cleaning-system',
     },

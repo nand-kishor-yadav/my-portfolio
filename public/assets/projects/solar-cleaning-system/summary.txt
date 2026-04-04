@@ -3,9 +3,9 @@ PROJECT: Automated Solar Panel Cleaning System
 TYPE: Embedded Systems / Mechanical Design / Industrial Automation
 
 DESCRIPTION:
-An automated solar panel cleaning system designed to maintain panel efficiency by removing dust and debris using a rail-based cleaning mechanism. The system is built for scalable deployment across multiple panels with centralized control.
+An automated solar panel cleaning system designed to maintain panel efficiency by removing dust and debris using a rail-based cleaning mechanism. The project is structured for scalable deployment across multiple panels with centralized control, combining embedded electronics, motion control, pump switching, and mechanical cleaning hardware.
 
-The design focuses on reliability, low maintenance, and automation to reduce manual cleaning effort in solar installations.
+The current project milestone includes the completed PCB design for the controller and power electronics layer, along with full schematic capture, 3D PCB views, and panel-level architecture assets.
 
 FEATURES:
 - Time-based automatic cleaning
@@ -14,16 +14,18 @@ FEATURES:
 - Brush and water spray cleaning mechanism
 - External battery-powered operation
 - Multi-panel support via master controller
+- Dedicated PCB design for controller, motor driver, pump control, and power distribution
 
 WORKFLOW:
-Scheduled Trigger / Manual Command → ESP32 Controller → Motor Drive System → Cleaning Mechanism Activation
+Scheduled Trigger / Manual Command -> ESP32 Controller -> Motor Driver and Pump Control -> Rail Motion and Cleaning Mechanism Activation
 
-The system operates on predefined schedules or user commands, activating a rail-mounted cleaning unit that moves across the panel surface while performing brush and water-based cleaning.
+The system operates on predefined schedules or user commands, activating a rail-mounted cleaning unit that moves across the panel surface while performing brush and water-based cleaning. The control design is built to sequence panel operations and support centralized management across multiple cleaning nodes.
 
 ARCHITECTURE:
 - Local cleaning unit per panel
 - Centralized master controller for up to 6 panels
 - Embedded control using ESP32
+- Custom PCB design integrating controller, power, and actuation interfaces
 
 USE CASE:
 - Solar farms

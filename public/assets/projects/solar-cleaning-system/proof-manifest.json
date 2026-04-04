@@ -1,5 +1,14 @@
 {
-  "visualsImages": [],
+  "visualsImages": [
+    "ESP32-Schematic.webp",
+    "Full-3D-Design.webp",
+    "Full-PCB-Design.webp",
+    "Full-Schematic.webp",
+    "MCP-Schematic.webp",
+    "Motor-Driver-Schematic.webp",
+    "Pump-Control-Schematic.webp",
+    "Single-Panel-PCB-Design.webp"
+  ],
   "workingVideos": [],
   "testingImages": []
 }
